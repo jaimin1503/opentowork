@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
 	<div className="flex  justify-between">
 		<div className="left_side w-[60vw]">
-			<ul className=" flex justify-around border-b-2 py-3 ">
+			<ul className=" flex justify-around border-b-2 py-3 border-purple-600">
 				<li className=" cursor-pointer"><img src="#" alt="sdfg" /></li>
 				<li className=" text-white cursor-pointer hover:text-purple-200">Development & IT</li>
 				<li className=" text-white cursor-pointer hover:text-purple-200">AI Services</li>
@@ -13,7 +13,7 @@ export default function Navbar() {
 				<li className=" cursor-pointer text-white hover:text-purple-200">Writing & more</li>
 			</ul>
 		</div>
-		<div className="right_side w-[40vw] flex border-b-2 justify-end px-5 items-center">
+		<div className="right_side w-[40vw] flex border-b-2 justify-end px-5 items-center border-purple-600">
 			<div className="log_in">
 				<p className=" text-white cursor-pointer px-5">log in</p>
 			</div>
@@ -21,6 +21,7 @@ export default function Navbar() {
 				<button className=" bg-blue-500 py-2 px-5 rounded-full text-white">Sign up</button>
 			</div>
 		</div>
+		
 	</div>
   )
 }
