@@ -1,15 +1,27 @@
 import './style.css'
-import solodev from './per-loov-4wOkqiXNP7M-unsplash.jpg'
-import python from './python.png'
-import java from './java.png'
-import cpp from './cpp.png'
-import mysql from './mysql.png'
-import nodejs from './nodejs.png'
-import react from './react.png'
-import ruby from './ruby.png'
-import web from './web.png'
+import solodev from './assets/per-loov-4wOkqiXNP7M-unsplash.jpg'
+import python from './assets/python.png'
+import java from './assets/java.png'
+import cpp from './assets/cpp.png'
+import mysql from './assets/mysql.png'
+import nodejs from './assets/nodejs.png'
+import react from './assets/react.png'
+import ruby from './assets/ruby.png'
+import web from './assets/web.png'
+import app from './assets/app.jpg'
+import data from './assets/data.jpg'
+import shopify from './assets/shopify.jpg'
+import ml from './assets/ml.jpg'
+import workpress from './assets/wordpress.jpg'
+import { useState } from 'react'
 
 export default function DevIT() {
+	const [currentImage, setCurrentImage] = useState(app);
+
+	// Define a function to handle image changes
+	const changeImage = (newImage) => {
+	  setCurrentImage(newImage);
+	};
   return (
 	<div className='gradient_dev'>
 		<div className="row1  flex justify-center  py-10 ">
@@ -53,6 +65,28 @@ export default function DevIT() {
 				</div>
 				<div className="type1 flex justify-center items-center w-[20vw] h-[20vh] bg-[#4a426a] rounded-xl mx-5 my-5">
 					<img className='h-[80%] w-[80%] object-contain hover:scale-105' style={{transition:'0.3s'}} src={java} alt="dsd" />
+				</div>
+			</div>
+		</div>
+		<div className="row3">
+			<div className="text flex justify-center">
+				<h1 className='text-white text-4xl'>
+					Development and IT projects for all yoour need.
+				</h1>
+			</div>
+			<div className="imageandtext flex justify-center">
+				<div className="text2 h-[50vh] w-[95vw] rounded-xl my-10 bg-cyan-500 flex">
+					<ul className='flex-col flex w-[30%] pt-10 pb-5 pl-10'>
+						<li className=' text-white text-xl py-2 active:text-purple-400 hover:text-purple-500 cursor-pointer' onClick={() => changeImage(app)}>Mobile app Development</li>
+						<li className=' text-white text-xl py-2 active:text-purple-400 hover:text-purple-500 cursor-pointer' onClick={() => changeImage(shopify)}>Shopify Development</li>
+						<li className=' text-white text-xl py-2 active:text-purple-400 hover:text-purple-500 cursor-pointer' onClick={() => changeImage(workpress)}>WordPress Development</li>
+						<li className=' text-white text-xl py-2 active:text-purple-400 hover:text-purple-500 cursor-pointer' onClick={() => changeImage(data)}>Data Visualization</li>
+						<li className=' text-white text-xl py-2 active:text-purple-400 hover:text-purple-500 cursor-pointer' onClick={() => changeImage(ml)}>Machine Learning</li>
+					<button className='bg-purple-500 mr-10 mt-10 text-white hover:bg-purple-600 rounded-full py-2 px-4'>Browse Projects</button>
+					</ul>
+				<div className="image w-[70%]">
+					<img className='w-[100%] h-[100%] object-cover rounded-xl' src={currentImage} alt="dfg" />
+				</div>
 				</div>
 			</div>
 		</div>

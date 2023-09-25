@@ -1,4 +1,4 @@
-import Navbar from "../navbar/Navbar";
+
 import work_img from './—Pngtree—people characters work near a_7516385.png'
 import './style.css'
 import ai from './ai.png'
@@ -26,15 +26,15 @@ export default function Home() {
 		<div className="row2 flex justify-center">
 			<div className="row2info flex flex-col justify-center items-start mx-20">
 				<div className=" flex justify-center py-5">
-					<span class="material-symbols-outlined text-white px-5 text-3xl">select_check_box</span>
+					<span className="material-symbols-outlined text-white px-5 text-3xl">select_check_box</span>
 					<h1 className=" text-white text-3xl">No cost to join</h1>
 				</div>
 				<div className=" flex justify-center py-5">
-				<span class="material-symbols-outlined text-white px-5 text-3xl">push_pin</span>
+				<span className="material-symbols-outlined text-white px-5 text-3xl">push_pin</span>
 					<h1 className=" text-white text-3xl">Post a job and hire top talent</h1>
 				</div>
 				<div className=" flex justify-center py-5">
-					<span class="material-symbols-outlined text-white px-5 text-3xl">stars</span>
+					<span className="material-symbols-outlined text-white px-5 text-3xl">stars</span>
 					<h1 className=" text-white text-3xl">Work with the best—without breaking the bank</h1>
 				</div>
 			</div>
@@ -79,7 +79,7 @@ export default function Home() {
 					<h2 className=" text-3xl text-gray-400 max-w-[40%] pt-10">
 						Work with huge network of individual professionals.From quick fixes to lasting solutions.
 					</h2>
-					<div className=" h-[150px] w-[280px] my-5 rounded-xl bg-purple-600 opacity-60 hover:bg-purple-700">
+					<div className=" h-[150px] w-[280px] my-5 rounded-xl bg-[#4a426a] hover:bg-purple-800">
 						<h3 className=" text-white text-3xl p-5">
 						Your Project, Our Expertise.
 						</h3>
@@ -87,7 +87,7 @@ export default function Home() {
 						   &rarr;
 						</h3>
 					</div>
-					<div className=" h-[150px] w-[280px] my-5 rounded-xl bg-purple-600 opacity-60 hover:bg-purple-700">
+					<div className=" h-[150px] w-[280px] my-5 rounded-xl bg-[#4a426a] hover:bg-purple-800">
 						<h3 className=" text-white text-3xl p-5">
 						Quality Freelancers, Quality Work.
 						</h3>

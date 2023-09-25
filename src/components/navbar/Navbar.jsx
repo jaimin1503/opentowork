@@ -21,10 +21,10 @@ export default function Navbar() {
 		</div>
 		<div className="right_side w-[40vw] flex border-b-2 justify-end px-5 items-center border-purple-600">
 			<button className="log_in" >
-				<p className=" text-white cursor-pointer px-5">log in</p>
+				<p className=" text-white cursor-pointer px-5 hover:text-purple-200">log in</p>
 			</button>
 			<div className="sign_up">
-				<button className=" bg-blue-500 py-2 px-5 rounded-full text-white" onClick={signuphandler}>Sign up</button>
+				<button className=" bg-purple-500 py-2 px-5 rounded-full text-white hover:bg-purple-600 hover:text-purple-200" onClick={signuphandler}>Sign up</button>
 			</div>
 		</div>
 		
