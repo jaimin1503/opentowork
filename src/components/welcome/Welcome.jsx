@@ -30,7 +30,7 @@ export default function Welcome() {
 				
 			</div>
 			<div className=" welcome_form border-2 border-gray-300 mx-5 h-40 w-[271px] rounded-xl cursor-pointer hover:border-green-600">
-				<input className=" mt-5 ml-[6rem] absolute" type="radio" name="client" id="clien" onChange={handleChange}/>
+				<input className=" mt-5 ml-[6rem] absolute" type="radio" name="client" id="clien"  onChange={handleChange}/>
 				<label className="cursor-pointer" htmlFor="clien"><p className=" mx-auto text-xl font-semibold pt-10 text-left h-[100%] w-[100%] relative max-w-[70%]">
 					I am freelancer, looking for work.
 				</p></label>
