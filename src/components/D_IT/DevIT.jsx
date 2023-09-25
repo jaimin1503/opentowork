@@ -1,4 +1,3 @@
-import Navbar from '../navbar/Navbar'
 import './style.css'
 import solodev from './per-loov-4wOkqiXNP7M-unsplash.jpg'
 import python from './python.png'
@@ -13,10 +12,9 @@ import web from './web.png'
 export default function DevIT() {
   return (
 	<div className='gradient_dev'>
-		<Navbar/>
-		<div className="row1  flex justify-center mt-10 py-10 ">
+		<div className="row1  flex justify-center  py-10 ">
 			<div className="row1imagearea w-[95vw] h-[70vh] bg-[#4a426a] rounded-xl flex justify-between">
-				<div className="textarea w-[45%] flex items-center justify-center flex-col -mt-20">
+				<div className="textarea w-[45%] flex items-center justify-center flex-col ">
 					<h1 className=' text-5xl mx-5 my-4 text-white max-w-[80%]'>Developers and IT experts to scale your org.</h1>
 					<h2 className=' text-xl mx-5 my-4 text-gray-400 max-w-[80%]'>Hire the particular experts and get your work done within your timeline.</h2>
 				</div>

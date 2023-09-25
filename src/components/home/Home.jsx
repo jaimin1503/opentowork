@@ -10,8 +10,7 @@ import worker from './worker.jpg'
 export default function Home() {
   return (
 	<div className="gradient_home">
-		<Navbar/>
-		<div className="row1 flex justify-around mt-10">
+		<div className="row1 flex justify-around">
 		<div className="info_home flex flex-col justify-center">
 			<h1 className=" gradient_text text-5xl font-bold">
 				Explore the sea of Talent,
