@@ -1,4 +1,5 @@
-import Home from "./components/home/Home";
+import DevIT from "./components/D_IT/DevIT";
+// import Home from "./components/home/Home";
 // import Navbar from "./components/navbar/Navbar";
 // import Welcome from "./components/welcome/Welcome";
 
@@ -6,8 +7,9 @@ import Home from "./components/home/Home";
 function App() {
   return (
     <div>
-      <Home/>
+      {/* <Home/> */}
       {/* <Welcome/> */}
+      <DevIT/>
     </div>
   );
 }
