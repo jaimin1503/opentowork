@@ -13,7 +13,7 @@ export default function Navbar() {
 			<ul className=" flex justify-around border-b-2 py-3 border-purple-600">
 				<Link to="/" className=" cursor-pointer"><img src="#" alt="sdfg" /></Link>
 				<Link to='/DevIT' className=" text-white cursor-pointer hover:text-purple-200">Development & IT</Link>
-				<li className=" text-white cursor-pointer hover:text-purple-200">AI Services</li>
+				<Link to='/AI' className=" text-white cursor-pointer hover:text-purple-200">AI Services</Link>
 				<li className=" text-white cursor-pointer hover:text-purple-200">Design & Creation</li>
 				<li className=" cursor-pointer text-white hover:text-purple-200">Sales & Marketing</li>
 				<li className=" cursor-pointer text-white hover:text-purple-200">Writing & more</li>
