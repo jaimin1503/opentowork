@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Welcome from "./components/welcome/Welcome";
 import AI from "./components/aiservices/AI";
 import {Routes,Route} from 'react-router-dom'
+import Design from "./components/design/Design";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/welcome" element={<Welcome />}></Route>
       <Route path="/DevIT" element={<DevIT/>}></Route>
       <Route path="/AI" element={<AI/>}></Route>
+      <Route path="/Design" element={<Design/>}></Route>
       </Routes>
       <Footer/>
     </div>

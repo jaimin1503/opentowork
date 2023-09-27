@@ -14,7 +14,7 @@ export default function Navbar() {
 				<Link to="/" className=" cursor-pointer"><img src="#" alt="sdfg" /></Link>
 				<Link to='/DevIT' className=" text-white cursor-pointer hover:text-purple-200">Development & IT</Link>
 				<Link to='/AI' className=" text-white cursor-pointer hover:text-purple-200">AI Services</Link>
-				<li className=" text-white cursor-pointer hover:text-purple-200">Design & Creation</li>
+				<Link to='/Design' className=" text-white cursor-pointer hover:text-purple-200">Design & Creation</Link>
 				<li className=" cursor-pointer text-white hover:text-purple-200">Sales & Marketing</li>
 				<li className=" cursor-pointer text-white hover:text-purple-200">Writing & more</li>
 			</ul>
