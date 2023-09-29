@@ -22,7 +22,7 @@ export default function DevIT() {
 		<div className="row1  flex justify-center  py-10 ">
 			<div className="row1imagearea w-[90vw] h-[70vh] bg-[#4a426a] rounded-xl flex">
 				<div className="textarea w-[40%] flex items-center justify-center flex-col ">
-					<h1 className=' text-5xl mx-5 my-4 text-white max-w-[80%]'>Best Designers and Creators for your business.</h1>
+					<h1 className=' text-5xl mx-5 my-4 text-white max-w-[80%] font-bold'>Best Designers and Creators for your business.</h1>
 					<h2 className=' text-xl mx-5 my-4 text-gray-400 max-w-[80%]'>Find the best design that suits your work and personality.</h2>
 				</div>
 				<div className="imagearea w-[60%] flex items-center mr-3">
