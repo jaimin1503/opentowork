@@ -6,6 +6,7 @@ import it from './IT.png'
 import business from './business.png'
 import design from './design.png'
 import worker from './worker.jpg'
+import './script.js'
 
 export default function Home() {
   return (
