@@ -9,3 +9,11 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+@media  (maxwidth: 600px){
+
+	.row1{
+		flex-direction: column;
+	}
+
+}

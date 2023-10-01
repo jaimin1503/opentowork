@@ -1,7 +1,9 @@
+import './style.css'
+
 export default function Footer() {
   return (
 	<div>
-		<footer>
+		<footer className="pt-10 bg-black">
 		<div className="footer py-5 bg-black">
 		<ul className=" flex justify-evenly">
 			<li className=" text-white text-sm py-3 cursor-pointer">&copy; Copyrights</li>
