@@ -10,10 +10,8 @@
 	-webkit-text-fill-color: transparent;
 }
 
-@media  (maxwidth: 600px){
+@media  (max-width: 1130px){
 
-	.row1{
-		flex-direction: column;
-	}
+	
 
 }
