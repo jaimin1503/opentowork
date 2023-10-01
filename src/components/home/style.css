@@ -10,8 +10,14 @@
 	-webkit-text-fill-color: transparent;
 }
 
-@media  (max-width: 1130px){
+@media  (max-width: 600px){
 
-	
+	.dhimahi{
+		flex-direction: column;
+		background-color: #F1FF73;
+	}
+	.info_home h1{
+		font-size: 1rem;
+	}
 
 }
