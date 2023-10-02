@@ -35,7 +35,7 @@ export default function Home() {
 	},[])
   return (
 	<div className="gradient_home">
-<div className="row1 dhimahi flex flex-col items-center pt-10">
+<div className="row1 flex flex-col items-center pt-10">
 		<div className="info_home md:flex md:flex-col md:justify-center">
 			<h1 ref = {el => {textAnimation = el}} className=" ml-5 gradient_text md:text-5xl font-bold">
 				Explore the sea of Talent,
