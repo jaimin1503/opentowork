@@ -28,11 +28,11 @@ export default function DevIT() {
 	};
   return (
 	<div className='gradient_dev'>
-		<div className="row1  flex justify-center  py-10 ">
+		<div className="row1 py-10 flex items-center ml-16">
 			<div className="row1imagearea w-[90vw] h-[70vh] bg-[#4a426a] rounded-xl flex justify-between">
 				<div className="textarea w-[40%] flex items-center justify-center flex-col ">
-					<h1 className=' text-5xl mx-5 my-4 text-white max-w-[80%]'>Developers and IT experts to scale your org.</h1>
-					<h2 className=' text-xl mx-5 my-4 text-gray-400 max-w-[80%]'>Hire the particular experts and get your work done within your timeline.</h2>
+					<h1 className='row1_text text-5xl mx-5 my-4 text-white max-w-[80%]'>Developers and IT experts to scale your org.</h1>
+					<h2 className='row1_text text-xl mx-5 my-4 text-gray-400 max-w-[80%]'>Hire the particular experts and get your work done within your timeline.</h2>
 				</div>
 				<div className="imagearea w-[60%] flex items-center">
 					<img className=' rounded-xl object-cover h-[95%] ml-10' src={solodev} alt="developer" />

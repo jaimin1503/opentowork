@@ -19,8 +19,8 @@ export default function DevIT() {
 	};
   return (
 	<div className='gradient_dev'>
-		<div className="row1  flex justify-center  py-10 ">
-			<div className="row1imagearea w-[90vw] h-[70vh] bg-[#4a426a] rounded-xl flex">
+		<div className="design-row-1 mx-16 flex justify-center  py-10">
+			<div id='roww1' className="row1imagearea w-[90vw] h-[70vh] bg-[#4a426a] rounded-xl flex">
 				<div className="textarea w-[40%] flex items-center justify-center flex-col ">
 					<h1 className=' text-5xl mx-5 my-4 text-white max-w-[80%] font-bold'>Best Designers and Creators for your business.</h1>
 					<h2 className=' text-xl mx-5 my-4 text-gray-400 max-w-[80%]'>Find the best design that suits your work and personality.</h2>
@@ -72,7 +72,48 @@ export default function DevIT() {
 		<div className="button flex justify-center py-10">
 				<button className="bg-purple-500 py-3 px-10 text-white rounded-full hover:scale-105" style={{transition:'0.3s'}}>Join Now</button>
 			</div>
+
+			<div className="try">
+				<div className="try1 w-48 h-48 bg-green-200">
+
+				</div>
+				<div className="try1 w-48 h-48 bg-blue-400">
+
+				</div>
+			</div>
 		
 	</div>
   )
 }
+
+// Import React and other necessary dependencies
+// import React, { useEffect, useState } from 'react';
+// import './YourComponent.css'; // Import your CSS file
+
+// function YourComponent() {
+//   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+//   useEffect(() => {
+//     // Update the state based on the screen width
+//     const handleResize = () => {
+//       setIsSmallScreen(window.innerWidth <= 980);
+//     };
+
+//     // Initial check and add event listener
+//     handleResize();
+//     window.addEventListener('resize', handleResize);
+
+//     // Clean up the event listener when the component unmounts
+//     return () => {
+//       window.removeEventListener('resize', handleResize);
+//     };
+//   }, []);
+
+//   return (
+//     <div className={`row1imagearea ${isSmallScreen ? 'small-screen' : ''}`}>
+//       {/* Your component content */}
+//     </div>
+//   );
+// }
+
+// export default YourComponent;

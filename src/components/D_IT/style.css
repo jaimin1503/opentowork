@@ -2,3 +2,10 @@
 	background: rgb(74,36,99);
 	background: linear-gradient(157deg, rgba(74,36,99,1) 0%, rgba(0,0,0,1) 100%);
 }
+
+@media (max-width: 768px){
+	.row1_text{
+		font-size: small;
+		color: antiquewhite;
+	}
+}

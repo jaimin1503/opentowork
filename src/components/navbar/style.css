@@ -9,7 +9,47 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid purple;
+	transition: 0.5s;
+	align-items: center;
+}
+.ula{
+	display: flex;
+	justify-content: space-around;
+	padding: 0.6rem 0;
+}
+.li{
+	cursor: pointer;
+	color: white;
+	text-decoration: none;
+}
 
+.left_side{
+	width: 40vw;
+}
+
+.right_side{
+	width: 40vw;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.log_in p{
+	color: white;
+	cursor: pointer;
+	padding: 0 1.5rem;
+}
+.sign_up{
+	background-color: purple;
+	padding: 1rem 1.5rem;
+	color: wihte;
+	border-radius: 2rem;
+	cursor: pointer;
+
+}
 .burger{
 	display: none;
 	position: absolute;
