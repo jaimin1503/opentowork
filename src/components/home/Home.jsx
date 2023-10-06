@@ -52,7 +52,7 @@ export default function Home() {
 			<div>
 				<div ref = {el => {listAnimation = el}} className="row2info">
 					<span className=" symbol material-symbols-outlined ">select_check_box</span>
-					<h1 className=" text-white text-3xl">No cost to join</h1>
+					<h1 className=" text-white">No cost to join</h1>
 				</div>
 				<div ref = {el => {listAnimation2 = el}} className="row2info">
 				<span className=" symbol material-symbols-outlined">push_pin</span>

@@ -83,7 +83,6 @@
 .row2info{
 	display: flex;
 	justify-content: flex-start;
-	padding: 1.5rem 0;
 	flex-direction: row;
 	align-items: center;
 }

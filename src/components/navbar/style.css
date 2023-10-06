@@ -9,6 +9,10 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+.logo{
+	width: 2rem;
+}
 .navbar{
 	display: flex;
 	justify-content: space-between;

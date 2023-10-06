@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './style.css'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import logo from './586273b931349e0568ad89df.png'
 
 export default function Navbar() {
 	const navigat=useNavigate();
@@ -24,7 +25,7 @@ export default function Navbar() {
 	<div className={`navbar ${isOpen ? 'h_nav_resp' : ''} gradient_home`} >
 		<div className="left_side">
 			<ul className={`ula ${!visible ? 'v_nav_resp' : ''}`}>
-				<Link to="/" className=" li"><img src="#" alt="sdfg" /></Link>
+				<Link to="/" className=" li"><img className='logo' src={logo} alt="sdfg" /></Link>
 				<Link to='/DevIT' className=" li">Development & IT</Link>
 				<Link to='/AI' className=" li">AI Services</Link>
 				<Link to='/Design' className=" li">Design & Creation</Link>
