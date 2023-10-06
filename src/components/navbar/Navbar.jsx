@@ -27,7 +27,6 @@ export default function Navbar() {
 			<ul className={`ula ${!visible ? 'v_nav_resp' : ''}`}>
 				<Link to="/" className=" li"><img className='logo' src={logo} alt="sdfg" /></Link>
 				<Link to='/DevIT' className=" li">Development & IT</Link>
-				<Link to='/AI' className=" li">AI Services</Link>
 				<Link to='/Design' className=" li">Design & Creation</Link>
 			</ul>
 		</div>

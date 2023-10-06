@@ -58,7 +58,7 @@
 .row2 h1{
 	font-weight: bolder;
 	color: white;
-	margin: 3rem 0;
+	/* margin: 3rem 0; */
 }
 .types{
 	display: flex;
