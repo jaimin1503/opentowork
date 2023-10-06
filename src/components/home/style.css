@@ -37,27 +37,48 @@
 	justify-content: center;
 	align-items: flex-start;
 }
+.cata-row1{
+	display: flex;
+	justify-content: center;
+}
 .cata_boxes{
 	display: flex;
 	flex-direction: column;
+	margin-top: 1rem;
+}
+.cata_boxes2{
+	display: flex;
+	flex-direction: column;
+	margin: 4rem 0;
 	
 }
-the-box{
+.the-box{
 	margin-bottom: 2rem;
 	height: 40vh;
-	width: 30vw;
-	border: 2px solid purple;
+	width: 40vh;
+	border: 2px solid rgb(159, 62, 183);
 	border-radius: 5%;
+	margin: 2rem;
 }
 .the-box:hover{
 	scale: 1.05;
 }
 .the_img{
 	height: 35vh;
-	width: 25vw;
+	width: 35vh;
 	margin: 1rem 1.5rem;
 	object-fit: cover;
 	position: absolute;
+}
+.box-w-text{
+	color:white;
+	padding: 1.5rem;
+	position: relative;
+}
+.box-g-text{
+	color:gray;
+	padding: 0 1.5rem;
+	position: relative;
 }
 .row2info{
 	display: flex;
@@ -81,4 +102,45 @@ the-box{
 	margin-left: 5rem;
 	font-weight: bold;
 }
-
+.row5{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 5rem;
+}
+.worker{
+	width: 80vw;
+	height: 60vh;
+	object-fit: cover;
+	margin-top: 2rem;
+	border-radius: 10px;
+	position: absolute;
+}
+.z-10{
+	z-index: 10;
+	padding-top: 4rem;
+	margin-left: 10%;
+}
+.z-10 h1{
+	color: white;
+}
+.z-10 h2{
+	color: gray;
+	max-width: 40%;
+	padding-top: 2rem;
+}
+.find{
+	height: 100px;
+	width: 200px;
+	margin: 1.5rem 0;
+	border-radius: 10px;
+	background-color: rgb(159, 62, 183);
+	cursor: pointer;
+}
+.find:hover{
+	background-color: rgb(155, 47, 182);
+}
+.find h3{
+	color: white;
+	padding: 1.5rem;
+}

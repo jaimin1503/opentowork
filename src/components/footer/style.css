@@ -2,3 +2,24 @@
 	background: rgb(74,36,99);
 	background: linear-gradient(157deg, rgba(74,36,99,1) 0%, rgba(0,0,0,1) 100%);
 }
+.pt-10{
+	background-color: rgb(0, 0, 0);
+	position: relative;
+}
+.footer{
+	padding: 1.5rem 0;
+	background-color: rgb(0, 0, 0);
+}
+.ulf{
+	display: flex;
+	justify-content: space-evenly;
+	list-style: none;
+}
+.li{
+	color: white;
+	padding: 0.8rem 0;
+	cursor: pointer;
+}
+.li:hover{
+	color: rgb(221, 218, 218);
+}

@@ -12,7 +12,7 @@
 .navbar{
 	display: flex;
 	justify-content: space-between;
-	border: 2px solid purple;
+	border-bottom: 2px solid rgb(139, 74, 139);
 	transition: 0.5s;
 	align-items: center;
 }
@@ -36,6 +36,7 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	margin-right: 2rem;
 }
 .log_in p{
 	color: white;
@@ -43,12 +44,14 @@
 	padding: 0 1.5rem;
 }
 .sign_up{
-	background-color: purple;
-	padding: 1rem 1.5rem;
+	background-color: rgb(159, 62, 183);
+	padding: 0.8rem 2rem;
 	color: wihte;
 	border-radius: 2rem;
 	cursor: pointer;
-
+	border: none;
+	color: white;
+	font-size: medium;
 }
 .burger{
 	display: none;
@@ -68,17 +71,19 @@
 
 @media (max-width:1130px) {
 	.navbar{
-		height: 80vh;
+		height: 50px;
 		justify-content: center;
 		flex-direction: column;
 		width: 100vw;
-		align-items: center;
+		align-items: flex-start;
 	}
 
 	.left_side ul{
 		flex-direction: column;
 		z-index: 50;
-		align-items: center;
+		align-items: flex-start;
+		margin-left: 2rem;
+
 	}
 	.li{
 		padding: 5px 0;
@@ -88,12 +93,16 @@
 	.right_side{
 		justify-content: start;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
+		margin-left: 2rem;
 	}
 	.log_in{
 		margin-bottom: 1.5rem;
 		font-size: 2rem;
 		font-weight: 900;
+	}
+	.log_in p{
+		padding: 0;
 	}
 	.sign_up button{
 		padding: 1rem 2rem;
@@ -106,6 +115,19 @@
 		opacity: 0;
 	}
 	.h_nav_resp{
-		height: 50px;
+		height: 50vh;
 	}
+}
+
+@media (max-width:800px){
+	.li{
+		font-size: large;
+	}
+	.log_in p{
+		font-size: large;
+	}
+	.sign_up{
+		padding: 0.5rem 1.5rem;
+	}
+	
 }

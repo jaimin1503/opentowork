@@ -18,21 +18,21 @@ export default function Home() {
 	let listAnimation2 = useRef(null)
 	let listAnimation3 = useRef(null)
 
-	// useEffect(()=>{
-	// 	gsap.from([textAnimation,textAnimation2,listAnimation,listAnimation2,listAnimation3],{
-	// 		x: -100,
-	// 		opacity: 0,
-	// 		delay: 0.2,
-	// 		duration: 0.5,
-	// 		stagger: 0.2
-	// 	})
-	// 	gsap.from([imgAnimation],{
-	// 		x: 100,
-	// 		opacity: 0,
-	// 		delay: 0.2,
-	// 		duration: 0.8,
-	// 	})
-	// },[])
+	useEffect(()=>{
+		gsap.from([textAnimation,textAnimation2,listAnimation,listAnimation2,listAnimation3],{
+			x: -100,
+			opacity: 0,
+			delay: 0.2,
+			duration: 0.5,
+			stagger: 0.2
+		})
+		gsap.from([imgAnimation],{
+			x: 100,
+			opacity: 0,
+			delay: 0.2,
+			duration: 0.8,
+		})
+	},[])
   return (
 	<div className="gradient_home">
 		<div className="row1">
@@ -51,16 +51,16 @@ export default function Home() {
 		<div className="row2">
 			<div>
 				<div ref = {el => {listAnimation = el}} className="row2info">
-					<span className=" symbol material-symbols-outlined text-white px-5 text-3xl">select_check_box</span>
+					<span className=" symbol material-symbols-outlined ">select_check_box</span>
 					<h1 className=" text-white text-3xl">No cost to join</h1>
 				</div>
 				<div ref = {el => {listAnimation2 = el}} className="row2info">
-				<span className=" symbol material-symbols-outlined text-white px-5 text-3xl">push_pin</span>
-					<h1 className=" text-white text-3xl">Post a job and hire top talent</h1>
+				<span className=" symbol material-symbols-outlined">push_pin</span>
+					<h1 className=" text-white">Post a job and hire top talent</h1>
 				</div>
 				<div ref = {el => {listAnimation3 = el}} className="row2info">
-					<span className=" symbol material-symbols-outlined text-white px-5 text-3xl">stars</span>
-					<h1 className=" text-white text-3xl">Work with the best—without breaking the bank</h1>
+					<span className=" symbol material-symbols-outlined ">stars</span>
+					<h1 className=" text-white">Work with the best—without breaking the bank</h1>
 				</div>
 			</div>
 		</div>
@@ -68,50 +68,50 @@ export default function Home() {
 			<h1 className=" gradient_text">Brows by caragories:</h1>
 			<div className="cata-row1">
 				<div className="cata_boxes">
-					<div className="the-box mb-10 h-[40vh] w-[30vw] border-2 border-purple-600 rounded-xl hover:scale-105" style={{transition:'0.3s'}}>
-					<img className="the_img  h-[35vh] w-[25vw] my-2 mx-5 object-cover absolute" src={it} alt="ai" />
-						<h1 className="text-white text-3xl p-5 relative">Development & IT</h1>
-						<p className=" text-gray-300 px-5 relative">1000+ Skills</p>
+					<div className="the-box" style={{transition:'0.3s'}}>
+					<img className="the_img" src={it} alt="ai" />
+						<h2 className="box-w-text">Development & IT</h2>
+						<p className="box-g-text">1000+ Skills</p>
 					</div>
-					<div className="the-box mb-10 h-[40vh] w-[30vw] border-2 border-purple-600 rounded-xl mx-auto hover:scale-105" style={{transition:'0.3s'}}>
-						<img className="the_img h-[35vh] w-[25vw] my-2 mx-5 object-cover absolute" src={ai} alt="ai" />
-						<h1 className="text-white text-3xl p-5 relative">AI Services</h1>
-						<p className=" text-gray-300 px-5 relative">600+ Skills</p>
+					<div className="the-box" style={{transition:'0.3s'}}>
+						<img className="the_img" src={ai} alt="ai" />
+						<h2 className="box-w-text">AI Services</h2>
+						<p className="box-g-text">600+ Skills</p>
 					</div>
 				</div>
 				<div className="cata_boxes2">
-					<div className="the-box mb-10 h-[40vh] w-[30vw] border-2 border-purple-600 rounded-xl hover:scale-105" style={{transition:'0.3s'}}>
-					<img className="the_img h-[35vh] w-[25vw] my-2 mx-5 object-cover absolute" src={design} alt="ai" />
-						<h1 className="text-white text-3xl p-5 relative">Design & Creation</h1>
-						<p className=" text-gray-300 px-5 relative">900+ Skills</p>
+					<div className="the-box" style={{transition:'0.3s'}}>
+					<img className="the_img" src={design} alt="ai" />
+						<h2 className="box-w-text">Design & Creation</h2>
+						<p className="box-g-text">900+ Skills</p>
 					</div>
-					<div className="the-box mb-10 h-[40vh] w-[30vw] border-2 border-purple-600 rounded-xl mx-auto hover:scale-105" style={{transition:'0.3s'}}>
-					<img className="the_img h-[35vh] w-[25vw] my-2 mx-5 object-cover absolute" src={business} alt="ai" />
-						<h1 className="text-white text-3xl p-5 relative">Sales & Marketing</h1>
-						<p className=" text-gray-300 px-5 relative">200+ Skills</p>
+					<div className="the-box" style={{transition:'0.3s'}}>
+					<img className="the_img" src={business} alt="ai" />
+						<h2 className="box-w-text">Sales & Marketing</h2>
+						<p className="box-g-text">200+ Skills</p>
 					</div>
 				</div>
 			</div>
 		</div>
-			<div className="row5">
-				<div className="flex items-center flex-col">
+			<div className="class">
+				<div className="row5">
 				
-					<img src={worker} alt="worker" className=" w-[80vw] h-[60vh] object-cover mt-10 rounded-xl absolute"/>
-				<div className=" z-10 pt-20">
-					<h1 className=" text-4xl text-white">
+					<img src={worker} alt="worker" className="worker"/>
+				<div className="z-10">
+					<h1>
 						Find Talent your way!
 					</h1>
-					<h2 className=" text-xl text-gray-400 max-w-[40%] pt-10">
+					<h2>
 						Work with huge network of individual professionals.From quick fixes to lasting solutions.
 					</h2>
-					<div className=" h-[100px] w-[200px] my-5 rounded-xl bg-[#4a426a] hover:bg-purple-800">
+					<div className="find">
 						<h3 className=" text-white text-xl p-4">
 						Your Project, Our Expertise.
 						<p>&rarr;</p>
 						</h3>
 					</div>
-					<div className=" h-[100px] w-[200px] my-5 rounded-xl bg-[#4a426a] hover:bg-purple-800">
-						<h3 className=" text-white text-xl p-4">
+					<div className="find">
+						<h3 className=" text-white">
 						Quality Freelancers, Quality Work.
 						<p>&rarr;</p>
 						</h3>
