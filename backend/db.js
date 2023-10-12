@@ -1,16 +1,19 @@
-const mongoose = require("mongoose");
-const mongoURI =
-  "mongodb+srv://jaimin15:opentowork123@cluster1.osslgvx.mongodb.net/";
+// database.js
 
-// main().catch(err => console.log(err));
+const mongoose = require('mongoose');
 
+const connectToDatabase = async () => {
+  const connectionString = 'mongodb://localhost:27017/opentowork';
 
-mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
+  try {
+    await mongoose.connect(connectionString, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log('Connected to MongoDB');
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error('Error connecting to MongoDB:', error);
-  });
+  }
+};
 
+module.exports = { connectToDatabase };
