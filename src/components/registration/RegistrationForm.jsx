@@ -4,62 +4,60 @@ import './style.css'
 
 function RegistrationForm() {
   // Define state variables for form fields
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    // Define initial values for your form fields here
+    username: '',
+    password: '',
+    email: '',
+    // ...other form fields
+  });
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission logic here, e.g., send data to a server
-    console.log("Submitted:", { firstName, lastName, email, password });
+
+    // Send the form data to the server for validation
+    const response = await fetch('http://localhost:3000/api/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      console.log("registration success")
+    } else {
+      console.log(response)
+    }
   };
+
 
   return (
     <div>
       <h2>Registration Form</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-			name="firstName"
-            required
-          />
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-			name="lastName"
-            required
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-			name="email"
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-			name="password"
-            required
-          />
-        </div>
+      <input
+  type="text"
+  name="username"
+  value={formData.username}
+  onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+/>
+
+<input
+  type="password"
+  name="password"
+  value={formData.password}
+  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+/>
+
+<input
+  type="email"
+  name="email"
+  value={formData.email}
+  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+/>
+
         <div>
           <button type="submit">Submit</button>
         </div>

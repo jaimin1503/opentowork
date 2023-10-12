@@ -9,16 +9,17 @@ router.post('/',[
 	body('email','Enter a valid email').isEmail(),
 	body('password','Enter a strong password').isLength({min:6})
 ], (req, res)=>{ 
-    const result = validationResult(req);
-  if (result.isEmpty()) {
-    return res.send(`Hello, ${req.body.username}!`);
-}
-res.send({ errors: result.array() });
-User.create({
-	username: req.body.username,
-	email: req.body.email,
-	password: req.body.password
-}).then(user => res.json(user))
+    const formData = req.body;
+
+  // Perform server-side validation here
+  if (!isValid(formData)) {
+    // If validation fails, send an error response
+    res.status(400).json({ error: 'Validation failed' });
+  } else {
+    // If validation is successful, process the data and send a success response
+    // Example: Save data to a database
+    res.status(200).json({ message: 'Form data is valid' });
+  }
 } )
 
 module.exports = router
