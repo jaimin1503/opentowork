@@ -17,10 +17,10 @@ export default function Navbar() {
 	}
   return (
 	<>
-	<div onClick={handleClick} class="burger" id="burger">
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
+	<div onClick={handleClick} className="burger" id="burger">
+			<div className="line"></div>
+			<div className="line"></div>
+			<div className="line"></div>
 		</div>
 	<div className={`navbar ${isOpen ? 'h_nav_resp' : ''} gradient_home`} >
 		<div className="left_side">
