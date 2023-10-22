@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Welcome from "./components/welcome/Welcome";
 import {Routes,Route} from 'react-router-dom'
 import Design from "./components/design/Design";
+import Display from "./components/display/Display";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/Design" element={<Design/>}></Route>
       </Routes>
       <Footer/>
+      <Display/>
     </div>
   );
 }
