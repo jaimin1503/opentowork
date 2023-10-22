@@ -85,35 +85,3 @@ export default function DevIT() {
 	</div>
   )
 }
-
-// Import React and other necessary dependencies
-// import React, { useEffect, useState } from 'react';
-// import './YourComponent.css'; // Import your CSS file
-
-// function YourComponent() {
-//   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-//   useEffect(() => {
-//     // Update the state based on the screen width
-//     const handleResize = () => {
-//       setIsSmallScreen(window.innerWidth <= 980);
-//     };
-
-//     // Initial check and add event listener
-//     handleResize();
-//     window.addEventListener('resize', handleResize);
-
-//     // Clean up the event listener when the component unmounts
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//     };
-//   }, []);
-
-//   return (
-//     <div className={`row1imagearea ${isSmallScreen ? 'small-screen' : ''}`}>
-//       {/* Your component content */}
-//     </div>
-//   );
-// }
-
-// export default YourComponent;
