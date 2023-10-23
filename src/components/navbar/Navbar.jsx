@@ -28,6 +28,7 @@ export default function Navbar() {
 				<Link to="/" className=" li"><img className='logo' src={logo} alt="sdfg" /></Link>
 				<Link to='/DevIT' className=" li">Development & IT</Link>
 				<Link to='/Design' className=" li">Design & Creation</Link>
+				<Link to='/NewPost' className=" li">Post New Job</Link>
 			</ul>
 		</div>
 		<div className={`right_side ${!visible ? 'v_nav_resp' : ''}`}>
