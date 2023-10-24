@@ -24,19 +24,14 @@ const postSchema = mongoose.Schema({
       required: true,
     },
   ],
-  // createdDate: {
-  //   type: Date,
-  //   default: Date.now,
-  // },
-  // deadline: {
-  //   type: Date,
-  //   required: true,
-  // },
-  // status: {
-  //   type: String,
-  //   enum: ["Open", "Closed", "In Progress", "Completed"],
-  //   default: "Open",
-  // },
+  createdDate: {
+    type: Date,
+    default: Date.now,
+  },
+  deadline: {
+    type: Date,
+    required: true,
+  },
 });
 
 export const Post = mongoose.model("Post", postSchema);
