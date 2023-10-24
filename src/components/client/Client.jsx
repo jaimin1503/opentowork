@@ -1,5 +1,10 @@
 import '../../index.css'
-import logo from './586273b931349e0568ad89df.png'
+import logo from './assets/586273b931349e0568ad89df.png'
+import search from './assets/search_FILL0_wght400_GRAD0_opsz24.png'
+import profile from './assets/account_circle_FILL0_wght400_GRAD0_opsz24.png'
+import saved from './assets/favorite_FILL0_wght400_GRAD0_opsz24.png'
+import notification from './assets/notifications_FILL0_wght400_GRAD0_opsz24.png'
+import { Link } from 'react-router-dom';
 
 export default function Client() {
   return (
@@ -12,11 +17,30 @@ export default function Client() {
 				<li className=' cursor-pointer'>Talent</li>
 				</ul>
 			</div>
-			<div className="right_navbar">
+			<div className="right_navbar w-[40%]">
 				<ul className="flex justify-around list-none  items-center py-2 ">
-					<li><input className=' rounded-full border-2 p-1 pl-5' placeholder='Search' type="text" /></li>
+					<li className=' flex items-center'> <img className=' absolute z-10 pl-40' src={search} alt="" /><input className=' relative rounded-full border-2 p-1 pl-5 pr-8' placeholder='Search' type="text" /></li>
+					<li className=' cursor-pointer'><img src={notification} alt="" /></li>
+					<li className=' cursor-pointer'><img src={saved} alt="" /></li>
+					<li className=' cursor-pointer'><img src={profile} alt="" /></li>
 				</ul>
 			</div>
+		</div>
+		<div className="welcome">
+			<div className="welcome_text">
+				<h1 className=' text-7xl font-bold'>
+					Welcome, User
+				</h1>
+				<h1 className=' text-7xl font-bold'>
+					Post your first job
+				</h1>
+			</div>
+			<div className="welcom_image">
+				<img src="" alt="" />
+			</div>
+		</div>
+		<div className="button">
+			<Link to='/NewPost'><button>Post New Job</button></Link>
 		</div>
 	</div>
   )
