@@ -13,10 +13,12 @@ const postSchema = mongoose.Schema({
   category: {
     type: String,
     required: true,
+    index: true, // Add indexing for better query performance
   },
   budget: {
     type: Number,
     required: true,
+    min: 0, // Add minimum value constraint
   },
   skillsRequired: [
     {
@@ -30,7 +32,8 @@ const postSchema = mongoose.Schema({
   },
   deadline: {
     type: Date,
-    // required: true,
+    required: true,
+    default: Date.now, // Add a default date, if needed
   },
 });
 
