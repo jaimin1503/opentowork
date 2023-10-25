@@ -14,7 +14,7 @@ function NewPost() {
     deadline: "",
   });
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -34,14 +34,6 @@ function NewPost() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // const data = {
-    //   title,
-    //   description,
-    //   category,
-    //   budget,
-    //   skillsRequired,
-    //   deadline,
-    // };
     setLoading(true);
     axios
       .post("http://localhost:5555/posts", formData)
@@ -67,6 +59,7 @@ function NewPost() {
             <input
               type="text"
               name="title"
+              id="title"
               value={formData.title}
               onChange={handleInputChange}
               required
@@ -78,6 +71,7 @@ function NewPost() {
             <label className="block text-sm font-bold">Description:</label>
             <textarea
               name="description"
+              id="description"
               value={formData.description}
               onChange={handleInputChange}
               required
@@ -90,6 +84,7 @@ function NewPost() {
             <input
               type="text"
               name="category"
+              id="category"
               value={formData.category}
               onChange={handleInputChange}
               required
@@ -102,6 +97,7 @@ function NewPost() {
             <input
               type="number"
               name="budget"
+              id="budget"
               value={formData.budget}
               onChange={handleInputChange}
               required

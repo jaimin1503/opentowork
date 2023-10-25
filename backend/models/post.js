@@ -30,7 +30,7 @@ const postSchema = mongoose.Schema({
   },
   deadline: {
     type: Date,
-    required: true,
+    // required: true,
   },
 });
 
