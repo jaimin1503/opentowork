@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import Design from "./components/design/Design";
 import Client from "./components/client/Client";
 import NewPost from "./components/NewPost/NewPost";
-import Chip from "./components/chip/Chip";
 // import Spinner from "./components/Spinner";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
       </Routes>
       <Footer />
       <Client />
-      <Chip />
     </div>
   );
 }
