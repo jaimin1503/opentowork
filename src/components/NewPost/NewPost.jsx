@@ -11,6 +11,7 @@ function NewPost() {
     category: "",
     budget: "",
     skillsRequired: [],
+    deadline: "",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -22,10 +23,6 @@ function NewPost() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
-  const [date, setDate] = useState("");
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  };
   const handleSkillsChange = (event) => {
     const { value, name } = event.target;
     setFormData({
@@ -35,16 +32,11 @@ function NewPost() {
   };
 
   const handleFormSubmit = (event) => {
-    const formattedDeadline = new Date(formData.deadline)
-      .toISOString()
-      .split("T")[0];
-    console.log(formData);
     event.preventDefault();
     setLoading(true);
     axios
       .post("http://localhost:5555/posts", {
         ...formData,
-        deadline: formattedDeadline,
       })
       .then(() => {
         setLoading(false);
@@ -132,8 +124,8 @@ function NewPost() {
             <input
               type="date"
               name="deadline"
-              value={date}
-              onChange={handleDate}
+              value={formData.deadline}
+              onChange={handleInputChange}
               required
               className="w-full border rounded px-3 py-2"
             />
