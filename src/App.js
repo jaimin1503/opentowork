@@ -24,7 +24,6 @@ function App() {
         <Route path="/FreeLancer" element={<FreeLancer />}></Route>
       </Routes>
       <Footer />
-      <Client />
     </div>
   );
 }
