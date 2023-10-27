@@ -50,7 +50,7 @@ function NewPost() {
   };
 
   return (
-    <>
+    <div>
       {loading ? <Spinner /> : ""}
       <div className="max-w-md mx-auto p-6 bg-white rounded shadow">
         <h2 className="text-2xl font-bold mb-4">Create a New Job Post</h2>
@@ -139,7 +139,7 @@ function NewPost() {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

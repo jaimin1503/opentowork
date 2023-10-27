@@ -25,7 +25,7 @@ export default function Welcome() {
   return (
     <div className="wel-text gradient_home text-white">
       <div className="wel-navbar">
-        <h1 className=" text-purple-600" style={{ mystyle }}>
+        <h1 className=" text-4xl text-white" style={{ mystyle }}>
           OpenToWork
         </h1>
       </div>

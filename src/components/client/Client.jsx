@@ -4,10 +4,11 @@ import profile from "./assets/account_circle_FILL0_wght400_GRAD0_opsz24.png";
 import saved from "./assets/favorite_FILL0_wght400_GRAD0_opsz24.png";
 import notification from "./assets/notifications_FILL0_wght400_GRAD0_opsz24.png";
 import { Link } from "react-router-dom";
+import work_post from "./assets/pngwing.com-9.png";
 
 export default function Client() {
   return (
-    <div className=" min-h-screen gradient_dev">
+    <div className=" min-h-screen">
       <div className="navbar flex justify-between">
         <div className="left_navbar w-[20%]">
           <ul className=" list-none flex justify-around py-2 items-center">
@@ -24,7 +25,7 @@ export default function Client() {
               {" "}
               {/* <img className=" absolute z-10" src={search} alt="" /> */}
               <input
-                className=" relative rounded-full border-2 border-purple-600 p-1 pl-5 pr-8 gradient_dev"
+                className=" relative rounded-full border-2 p-1 pl-5 pr-8 "
                 placeholder="Search"
                 type="text"
               />
@@ -41,20 +42,23 @@ export default function Client() {
           </ul>
         </div>
       </div>
-      <div className="welcome flex justify-center items-center m-auto">
+      <div className="welcome flex justify-around items-center mt-10">
         <div className="welcome_text flex items-center flex-col mt-10">
           <h1
-            className=" text-7xl font-bold text-white"
+            className=" text-7xl font-bold"
             style={{ fontFamily: `'Dosis', 'sans-serif'` }}
           >
             Welcome, User
           </h1>
           <h1
-            className=" text-7xl font-bold text-white"
+            className=" text-7xl font-bold"
             style={{ fontFamily: `'Dosis', 'sans-serif'` }}
           >
             Post your first job
           </h1>
+        </div>
+        <div className="image w-[30vw] py-5">
+          <img className=" w-[100%]" src={work_post} alt="" />
         </div>
       </div>
       <div className="button">
