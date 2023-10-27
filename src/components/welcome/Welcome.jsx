@@ -6,6 +6,11 @@ export default function Welcome() {
   const [text, setText] = useState({ buttontag: "Apply as client" });
   const [role, setRole] = useState("/Client");
   function handleChange(event) {
+    if (text.buttontag === "Apply as client") {
+      setRole("/FreeLancer");
+    } else if (text.buttontag === "Apply as freelancer") {
+      setRole("/Client");
+    }
     const { name, value } = event.target;
     setText((pre) => {
       return {
@@ -13,14 +18,6 @@ export default function Welcome() {
         [name]: value,
       };
     });
-  }
-  function handleRole(buttontag) {
-    if (buttontag === "Apply as client") {
-      setRole("/Client");
-    }
-    // } else {
-    //   setRole("/FreeLancer");
-    // }
   }
   const mystyle = {
     fontFamily: `'Lobster', cursive`,
@@ -54,7 +51,6 @@ export default function Welcome() {
               value="Apply as client"
               id="client"
               onChange={handleChange}
-              onClick={handleRole}
               checked={text.buttontag === "Apply as client"}
             />
             <label htmlFor="client">
@@ -70,7 +66,6 @@ export default function Welcome() {
               value="Apply as freelancer"
               id="clien"
               onChange={handleChange}
-              onClick={handleRole}
               checked={text.buttontag === "Apply as freelancer"}
             />
             <label htmlFor="clien">
