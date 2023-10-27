@@ -52,7 +52,7 @@ function NewPost() {
   return (
     <div>
       {loading ? <Spinner /> : ""}
-      <div className="max-w-md mx-auto p-6 bg-white rounded shadow">
+      <div className="max-w-md mx-auto p-6 bg-white rounded shadow mt-16">
         <h2 className="text-2xl font-bold mb-4">Create a New Job Post</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">

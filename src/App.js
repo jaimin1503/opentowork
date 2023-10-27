@@ -6,6 +6,7 @@ import Design from "./components/design/Design";
 import Client from "./components/client/Client";
 import FreeLancer from "./components/freelancer/FreeLancer";
 import NewPost from "./components/NewPost/NewPost";
+import AllPosts from "./components/allposts/AllPosts";
 // import Spinner from "./components/Spinner";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/NewPost" element={<NewPost />}></Route>
         <Route path="/Client" element={<Client />}></Route>
         <Route path="/FreeLancer" element={<FreeLancer />}></Route>
+        <Route path="/AllPosts" element={<AllPosts />}></Route>
       </Routes>
     </div>
   );
