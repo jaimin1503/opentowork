@@ -35,6 +35,11 @@ const postSchema = mongoose.Schema({
     required: true,
     default: Date.now, // Add a default date, if needed
   },
+  location: {
+    type: String,
+    required: true,
+    default: "India",
+  },
 });
 
 export const Post = mongoose.model("Post", postSchema);

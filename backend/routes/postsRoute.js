@@ -23,6 +23,7 @@ router.post("/", async (req, res) => {
       category: req.body.category,
       budget: req.body.budget,
       skillsRequired: req.body.skillsRequired,
+      location: req.body.location,
       // deadline: req.body.deadline,
       // status: req.body.status,
     };

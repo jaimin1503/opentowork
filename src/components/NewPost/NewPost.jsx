@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "../Spinner";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 function NewPost() {
   const [formData, setFormData] = useState({
@@ -12,7 +14,15 @@ function NewPost() {
     budget: "",
     skillsRequired: [],
     deadline: "",
+    // location: "",
   });
+  const [location, setLocation] = useState("");
+  const options = useMemo(() => countryList().getData(), []);
+
+  const changeHandler = (value) => {
+    setLocation(value);
+  };
+
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -128,6 +138,14 @@ function NewPost() {
               onChange={handleInputChange}
               required
               className="w-full border rounded px-3 py-2"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="">Location:</label>
+            <Select
+              options={options}
+              value={location}
+              onChange={changeHandler}
             />
           </div>
 
