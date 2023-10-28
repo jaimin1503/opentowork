@@ -9,6 +9,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   let textAnimation = useRef(null);
@@ -81,32 +82,36 @@ export default function Home() {
               ref={(el) => {
                 listAnimation = el;
               }}
-              className="row2info"
+              className="row2info flex items-center"
             >
-              <span className=" symbol material-symbols-outlined ">
+              <span className=" symbol material-symbols-outlined mt-5">
                 select_check_box
               </span>
-              <h1 className=" text-white">No cost to join</h1>
+              <h1 className=" text-white text-3xl mt-5">No cost to join</h1>
             </div>
             <div
               ref={(el) => {
                 listAnimation2 = el;
               }}
-              className="row2info"
+              className="row2info flex items-center"
             >
-              <span className=" symbol material-symbols-outlined">
+              <span className=" symbol material-symbols-outlined mt-5">
                 push_pin
               </span>
-              <h1 className=" text-white">Post a job and hire top talent</h1>
+              <h1 className=" text-white text-3xl mt-5">
+                Post a job and hire top talent
+              </h1>
             </div>
             <div
               ref={(el) => {
                 listAnimation3 = el;
               }}
-              className="row2info"
+              className="row2info flex items-center"
             >
-              <span className=" symbol material-symbols-outlined ">stars</span>
-              <h1 className=" text-white">
+              <span className=" symbol material-symbols-outlined mt-5 ">
+                stars
+              </span>
+              <h1 className=" text-white text-3xl mt-5">
                 Work with the best—without breaking the bank
               </h1>
             </div>
@@ -118,25 +123,25 @@ export default function Home() {
             <div className="cata_boxes">
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={it} alt="ai" />
-                <h2 className="box-w-text">Development & IT</h2>
-                <p className="box-g-text">1000+ Skills</p>
+                <h2 className="box-w-text text-3xl">Development & IT</h2>
+                <p className="box-g-text text-xl">1000+ Skills</p>
               </div>
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={ai} alt="ai" />
-                <h2 className="box-w-text">AI Services</h2>
-                <p className="box-g-text">600+ Skills</p>
+                <h2 className="box-w-text text-3xl">AI Services</h2>
+                <p className="box-g-text text-xl">600+ Skills</p>
               </div>
             </div>
             <div className="cata_boxes2">
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={design} alt="ai" />
-                <h2 className="box-w-text">Design & Creation</h2>
-                <p className="box-g-text">900+ Skills</p>
+                <h2 className="box-w-text text-3xl">Design & Creation</h2>
+                <p className="box-g-text text-xl">900+ Skills</p>
               </div>
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={business} alt="ai" />
-                <h2 className="box-w-text">Sales & Marketing</h2>
-                <p className="box-g-text">200+ Skills</p>
+                <h2 className="box-w-text text-3xl">Sales & Marketing</h2>
+                <p className="box-g-text text-xl">200+ Skills</p>
               </div>
             </div>
           </div>
@@ -145,22 +150,26 @@ export default function Home() {
           <div className="row5">
             <img src={worker} alt="worker" className="worker" />
             <div className="z-10">
-              <h1>Find Talent your way!</h1>
-              <h2>
+              <h1 className=" text-4xl">Find Talent your way!</h1>
+              <h2 className=" text-2xl">
                 Work with huge network of individual professionals.From quick
                 fixes to lasting solutions.
               </h2>
               <div className="find">
-                <h3 className=" text-white text-xl p-4">
-                  Your Project, Our Expertise.
-                  <p>&rarr;</p>
-                </h3>
+                <Link to="/AllPosts">
+                  <h3 className=" text-white text-xl p-2">
+                    Your Project, Our Expertise.
+                    <p>&rarr;</p>
+                  </h3>
+                </Link>
               </div>
               <div className="find">
-                <h3 className=" text-white">
-                  Quality Freelancers, Quality Work.
-                  <p>&rarr;</p>
-                </h3>
+                <Link to="/AllPosts">
+                  <h3 className=" text-white text-xl p-2">
+                    Quality Freelancers, Quality Work.
+                    <p>&rarr;</p>
+                  </h3>
+                </Link>
               </div>
             </div>
           </div>

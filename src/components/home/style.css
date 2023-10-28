@@ -64,9 +64,9 @@
 	scale: 1.05;
 }
 .the_img{
-	height: 35vh;
-	width: 35vh;
-	margin: 1rem 1.5rem;
+	height: 25vh;
+	width: 25vh;
+	margin: 5vh;
 	object-fit: cover;
 	position: absolute;
 }
@@ -138,8 +138,4 @@
 }
 .find:hover{
 	background-color: rgb(155, 47, 182);
-}
-.find h3{
-	color: white;
-	padding: 1.5rem;
 }
