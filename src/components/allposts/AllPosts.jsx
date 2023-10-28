@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../Spinner";
 import { FaMapMarker } from "react-icons/fa";
+import Navlogged from "../navbar_logged/Navlogged";
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -21,6 +22,7 @@ export default function AllPosts() {
   }, []);
   return (
     <div>
+      <Navlogged />
       {loading ? (
         <Spinner />
       ) : (
@@ -36,8 +38,8 @@ export default function AllPosts() {
                   <div className="m-3 flex">
                     {post.skillsRequired.map((skill) => {
                       return (
-                        <div className="mx-2">
-                          <div className="px-5 border-2 rounded-full border-purple-200 bg-purple-100 w-24 flex justify-center items-center">
+                        <div key={skill} className="mx-2">
+                          <div className="px-5 py-1 border-2 rounded-full border-purple-200 bg-purple-100 max-w-32 flex justify-center items-center text-sm">
                             {skill}
                           </div>
                         </div>
@@ -46,7 +48,7 @@ export default function AllPosts() {
                   </div>
                   <div className="p-3">
                     <div className="budget">
-                      Rs. {post.budget}
+                      Est. Budget Rs. {post.budget}
                       <p className="deadline text-xs text-gray-400">
                         -posted on {post.deadline.substring(0, 10)}
                       </p>

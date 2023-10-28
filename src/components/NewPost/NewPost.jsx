@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select1 from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
+import Navlogged from "../navbar_logged/Navlogged";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -26,16 +27,18 @@ const MenuProps = {
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
+  "Graphic Design",
+  "Adobe Photoshop",
+  "Web Design",
+  "HTML5",
+  "CSS3",
+  "Java Script",
+  "Web Development",
+  "Word Press",
+  "Adobe Illustrator",
+  "PHP",
+  "React",
+  "Node Js",
 ];
 
 function getStyles(name, personName, theme) {
@@ -53,9 +56,7 @@ function NewPost() {
     description: "",
     category: "",
     budget: "",
-    // skillsRequired: [],
     deadline: "",
-    // location: "",
   });
   const [location, setLocation] = useState(null);
   const options = useMemo(() => countryList().getData(), []);
@@ -87,13 +88,6 @@ function NewPost() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
-  // const handleSkillsChange = (event) => {
-  //   const { value, name } = event.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: [...formData[name], value],
-  //   });
-  // };
 
   const handleFormSubmit = (event) => {
     const locationValue = location ? location.label : "";
@@ -107,7 +101,7 @@ function NewPost() {
       })
       .then(() => {
         setLoading(false);
-        navigate("/");
+        navigate("/AllPosts");
       })
       .catch((error) => {
         setLoading(false);
@@ -118,6 +112,7 @@ function NewPost() {
 
   return (
     <div>
+      <Navlogged />
       {loading ? <Spinner /> : ""}
       <div className="max-w-md mx-auto p-6 bg-white rounded shadow mt-16">
         <h2 className="text-2xl font-bold mb-4">Create a New Job Post</h2>
@@ -168,25 +163,8 @@ function NewPost() {
               className="w-full border rounded px-3 py-2"
             />
           </div>
-
-          {/* <div className="mb-4">
-            <label className="block text-sm font-bold">Skills Required:</label>
-            <select
-              name="skillsRequired"
-              multiple
-              value={formData.skillsRequired}
-              onChange={handleSkillsChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            >
-              <option value="Skill1">Skill1</option>
-              <option value="Skill2">Skill2</option>
-              <option value="Skill3">Skill3</option>
-              {/* Add more skill options as needed */}
-          {/* </select> */}
-          {/* </div> } */}
           <FormControl sx={{ m: 1, width: 300 }}>
-            <InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+            <InputLabel id="demo-multiple-chip-label">Skills</InputLabel>
             <Select1
               labelId="demo-multiple-chip-label"
               id="demo-multiple-chip"
@@ -216,7 +194,7 @@ function NewPost() {
           </FormControl>
 
           <div className="mb-4">
-            <label className="block text-sm font-bold">Deadline:</label>
+            <label className="block text-sm font-bold pt-4">Deadline:</label>
             <input
               type="date"
               name="deadline"
