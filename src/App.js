@@ -7,6 +7,7 @@ import Client from "./components/client/Client";
 import FreeLancer from "./components/freelancer/FreeLancer";
 import NewPost from "./components/NewPost/NewPost";
 import AllPosts from "./components/allposts/AllPosts";
+import Chip from "./components/chip/Chip";
 // import Spinner from "./components/Spinner";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/FreeLancer" element={<FreeLancer />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
       </Routes>
+      <Chip />
     </div>
   );
 }
