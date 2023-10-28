@@ -16,11 +16,11 @@ function NewPost() {
     deadline: "",
     // location: "",
   });
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState(null);
   const options = useMemo(() => countryList().getData(), []);
 
-  const changeHandler = (value) => {
-    setLocation(value);
+  const changeHandler = (selectedOption) => {
+    setLocation(selectedOption);
   };
 
   const [loading, setLoading] = useState(false);
@@ -42,11 +42,13 @@ function NewPost() {
   };
 
   const handleFormSubmit = (event) => {
+    const locationValue = location ? location.label : "";
     event.preventDefault();
     setLoading(true);
     axios
       .post("http://localhost:5555/posts", {
         ...formData,
+        location: locationValue,
       })
       .then(() => {
         setLoading(false);

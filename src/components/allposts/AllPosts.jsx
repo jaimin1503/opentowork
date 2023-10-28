@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../Spinner";
+import { FaMapMarker } from "react-icons/fa";
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -27,12 +28,12 @@ export default function AllPosts() {
           {posts.map((post) => {
             return (
               <div key={post._id}>
-                <div className=" w-[60vw] h-[35vh] border-2 rounded-xl border-purple-300 m-auto mt-5">
+                <div className=" cursor-pointer max-w-[60vw] min-h-[35vh] border-2 rounded-xl border-purple-300 m-auto mt-5 hover:bg-purple-50">
                   <div className=" p-5 text-xl font-bold tracking-wider">
                     -{post.title}
                   </div>
-                  <div className=" p-5">{post.description}</div>
-                  <div className="m-5 flex">
+                  <div className=" p-3">{post.description}</div>
+                  <div className="m-3 flex">
                     {post.skillsRequired.map((skill) => {
                       return (
                         <div className="mx-2">
@@ -43,9 +44,17 @@ export default function AllPosts() {
                       );
                     })}
                   </div>
-                  <div className="p-5">
-                    <div className="bodget">Rs. {post.budget}</div>
-                    <div className="deadline"></div>
+                  <div className="p-3">
+                    <div className="budget">
+                      Rs. {post.budget}
+                      <p className="deadline text-xs text-gray-400">
+                        -posted on {post.deadline.substring(0, 10)}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-3 flex items-center">
+                    <FaMapMarker size={14} color="red" />
+                    <p className="px-1">{post.location}</p>
                   </div>
                 </div>
               </div>
