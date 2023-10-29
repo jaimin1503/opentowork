@@ -7,7 +7,7 @@ export default function Welcome() {
   const [role, setRole] = useState("/Client");
   function handleChange(event) {
     if (text.buttontag === "Apply as client") {
-      setRole("/FreeLancer");
+      setRole("/SignUp");
     } else if (text.buttontag === "Apply as freelancer") {
       setRole("/Client");
     }
