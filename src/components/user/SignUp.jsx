@@ -56,11 +56,6 @@ export default function SignUp() {
     password: "",
     first_name: "",
     last_name: "",
-    profile_picture: "",
-    description: "",
-    skills: "",
-    location: "",
-    hourly_rate: "",
   });
 
   const [location, setLocation] = useState(null);
@@ -76,11 +71,18 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+  const handleInputChange = (event) => {
+    const { name, value, type, checked } = event.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
   const handleChange2 = (event) => {
@@ -101,6 +103,9 @@ export default function SignUp() {
         ...formData,
         location: locationValue,
         skills: personName,
+        profile_picture: formData.profile_picture,
+        description: formData.description,
+        hourly_rate: formData.hourly_rate,
       })
       .then(() => {
         setLoading(false);
@@ -128,7 +133,7 @@ export default function SignUp() {
               type="text"
               name="username"
               value={formData.username}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -140,7 +145,7 @@ export default function SignUp() {
               type="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -152,7 +157,7 @@ export default function SignUp() {
               type="password"
               name="password"
               value={formData.password}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -164,7 +169,7 @@ export default function SignUp() {
               type="text"
               name="first_name"
               value={formData.first_name}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -176,7 +181,7 @@ export default function SignUp() {
               type="text"
               name="last_name"
               value={formData.last_name}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -188,7 +193,7 @@ export default function SignUp() {
               type="text"
               name="profile_picture"
               value={formData.profile_picture}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -199,7 +204,7 @@ export default function SignUp() {
             <textarea
               name="description"
               value={formData.description}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -252,7 +257,7 @@ export default function SignUp() {
               type="number"
               name="hourly_rate"
               value={formData.hourly_rate}
-              onChange={handleChange}
+              onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />

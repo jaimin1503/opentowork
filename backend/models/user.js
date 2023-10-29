@@ -31,12 +31,12 @@ const userSchema = mongoose.Schema({
     type: "string",
     default: "",
   },
-  skills: {
-    type: "array",
-    items: {
-      type: "string",
+  skills: [
+    {
+      type: String,
+      required: true,
     },
-  },
+  ],
   location: {
     type: "string",
     default: "India",
