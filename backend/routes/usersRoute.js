@@ -24,6 +24,10 @@ router.post("/", async (req, res) => {
       password: hash,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
+      description: req.body.description,
+      skills: req.body.skills,
+      location: req.body.location,
+      hourly_rate: req.body.hourly_rate,
     };
     const user = await User.create(newUser);
     return res.status(201).send(user);
@@ -68,7 +72,6 @@ router.put("/:id", async (req, res) => {
       !req.body.password ||
       !req.body.first_name ||
       !req.body.last_name
-      // !req.body.deadline
     ) {
       return res.status(400).send({
         message: "please fill all the required details",

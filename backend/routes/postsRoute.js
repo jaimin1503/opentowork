@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
       budget: req.body.budget,
       skillsRequired: req.body.skillsRequired,
       location: req.body.location,
-      // deadline: req.body.deadline,
+      deadline: req.body.deadline,
       // status: req.body.status,
     };
     const post = await Post.create(newPost);
@@ -69,8 +69,8 @@ router.put("/:id", async (req, res) => {
       !req.body.description ||
       !req.body.category ||
       !req.body.budget ||
-      !req.body.skillsRequired
-      // !req.body.deadline
+      !req.body.skillsRequired ||
+      !req.body.deadline
     ) {
       return res.status(400).send({
         message: "please fill all the required details",
