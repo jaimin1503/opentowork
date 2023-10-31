@@ -19,7 +19,7 @@ function App() {
         <Route path="/Design" element={<Design />}></Route>
         <Route path="/NewPost" element={<NewPost />}></Route>
         <Route path="/Client" element={<Client />}></Route>
-        <Route path="/FreeLancer" element={<FreeLancer />}></Route>
+        <Route path="/FreeLancer/:id" element={<FreeLancer />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
       </Routes>
