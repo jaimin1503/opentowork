@@ -16,14 +16,14 @@ export default function FreeLancer() {
     axios
       .get(`http://localhost:5555/users/${id}`)
       .then((res) => {
-        setUser(res.data);
+        setUser(res.data.data);
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div>

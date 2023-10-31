@@ -8,6 +8,7 @@ import FreeLancer from "./components/freelancer/FreeLancer";
 import NewPost from "./components/NewPost/NewPost";
 import AllPosts from "./components/allposts/AllPosts";
 import SignUp from "./components/user/SignUp";
+import LogIn from "./components/user/LogIn";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/FreeLancer/:id" element={<FreeLancer />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
+        <Route path="/Login" element={<LogIn />}></Route>
       </Routes>
     </div>
   );
