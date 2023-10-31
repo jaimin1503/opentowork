@@ -1,8 +1,42 @@
 import express from "express";
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
+import passport from "passport";
+import LocalStrategy from "passport-local";
 
 const router = express.Router();
+
+passport.use(
+  new LocalStrategy((username, password, done) => {
+    User.findOne({ username: username })
+      .exec()
+      .then((user) => {
+        if (!user) {
+          return done(null, false, { message: "User not found" });
+        }
+
+        if (!bcrypt.compareSync(password, user.password)) {
+          return done(null, false, { message: "Incorrect password" });
+        }
+
+        return done(null, user);
+      })
+      .catch((err) => {
+        // Handle the error
+        return done(err);
+      });
+  })
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user) => {
+    done(err, user);
+  });
+});
 
 router.post("/", async (req, res) => {
   try {
@@ -36,6 +70,14 @@ router.post("/", async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 });
+
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/users/login",
+  })
+);
 
 router.get("/", async (req, res) => {
   try {

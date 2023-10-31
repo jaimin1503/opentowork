@@ -81,9 +81,9 @@ export default function Welcome() {
           </Link>
           <p className="well-mt-5">
             Already have an account{" "}
-            <a className="wel-text-purple-600" href="/">
+            <Link className="wel-text-purple-600" to="/Login">
               Log in
-            </a>
+            </Link>
           </p>
         </div>
       </div>

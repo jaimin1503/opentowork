@@ -1,4 +1,6 @@
 import express from "express";
+import session from "express-session";
+import passport from "passport";
 import { PORT, mongoURL } from "./config.js";
 import mongoose from "mongoose";
 import postsRoute from "./routes/postsRoute.js";
@@ -9,6 +11,17 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.send("hello");
