@@ -37,19 +37,19 @@ export default function FreeLancer() {
               <div className="profile_pic">
                 <img
                   className="w-32 h-32 object-cover rounded-full m-10"
-                  src={default_pic}
+                  src="https://res.cloudinary.com/dtuuyvimi/image/upload/v1698832542/OpenToWork/mshbmy36gkwpcod0a3c2.jpg"
                   alt="Profile_pic"
                 />
               </div>
               <div className="profile_info">
-                <h1 className=" text-3xl font-bold py-2">{user.username}</h1>
+                <h1 className=" text-3xl font-bold py-2">{user.first_name}</h1>
                 <h2 className=" text-xl text-gray-500 py-2">
                   -{user.location}
                 </h2>
               </div>
             </div>
             <div className="profile_row2">
-              <h1 className="text-3xl p-10">Medical Student</h1>
+              <h1 className="text-3xl p-10">Computer Engineering Student</h1>
               <h2 className="px-10 text-justify text-gray-500">
                 {user.description}
               </h2>

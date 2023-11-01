@@ -13,7 +13,6 @@ import Select1 from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 import Navlogged from "../navbar_logged/Navlogged";
 import Spinner from "../Spinner";
-import "../../webpack.config";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -69,28 +68,33 @@ export default function SignUp() {
     setLocation(selectedOption);
   };
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setSelectedImage(file);
+    setImage(file);
   };
 
   const handleImageUpload = async () => {
-    if (!selectedImage) return;
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "h5veomwh");
+    data.append("cloud_name", "dtuuyvimi");
 
-    try {
-      const result = await cloudinary.v2.uploader.upload(selectedImage, {
-        folder: "OpenToWork", // Optional: Customize the folder structure in Cloudinary
+    fetch("http://api.cloudinary.com/v1_1/dtuuyvimi/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      console.log("Image uploaded:", result);
-    } catch (error) {
-      console.error("Error uploading image:", error);
-    }
   };
-
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
   //   setFormData({
@@ -210,6 +214,12 @@ export default function SignUp() {
           <div className=" mb-4">
             <label>Profile Picture</label>
             <input type="file" accept="image/*" onChange={handleImageChange} />
+            <button
+              className=" bg-gray-200 border-2 px-1 py-1 rounded-full"
+              onClick={handleImageUpload}
+            >
+              Upload Image
+            </button>
           </div>
 
           <div className=" mb-4">
