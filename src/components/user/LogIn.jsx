@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -14,15 +14,15 @@ export default function LogIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5555/users/login", {
+      .get("http://localhost:5555/login", {
         ...formData,
       })
       .then(() => {
         navigate("/AllPosts");
       })
       .catch((error) => {
-        alert("Arror occured");
-        console.log(error);
+        alert("Error occured");
+        console.log(error.message);
       });
   };
   return (

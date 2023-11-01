@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
 
 const userSchema = mongoose.Schema({
   username: {
@@ -23,10 +24,12 @@ const userSchema = mongoose.Schema({
     type: "string",
     required: true,
   },
-  profile_picture: {
-    type: "string",
-    default: "default_profile_picture.jpg",
-  },
+  // profile_picture: [
+  //   {
+  //     url: String,
+  //     fileName: String,
+  //   },
+  // ],
   description: {
     type: "string",
     default: "",
@@ -46,5 +49,7 @@ const userSchema = mongoose.Schema({
     default: 0,
   },
 });
+
+userSchema.plugin(passportLocalMongoose);
 
 export const User = mongoose.model("User", userSchema);

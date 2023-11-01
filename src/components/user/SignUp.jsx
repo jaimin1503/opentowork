@@ -13,6 +13,7 @@ import Select1 from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 import Navlogged from "../navbar_logged/Navlogged";
 import Spinner from "../Spinner";
+import "../../webpack.config";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -68,8 +69,27 @@ export default function SignUp() {
     setLocation(selectedOption);
   };
 
+  const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
+  };
+
+  const handleImageUpload = async () => {
+    if (!selectedImage) return;
+
+    try {
+      const result = await cloudinary.v2.uploader.upload(selectedImage, {
+        folder: "OpenToWork", // Optional: Customize the folder structure in Cloudinary
+      });
+      console.log("Image uploaded:", result);
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
@@ -124,7 +144,7 @@ export default function SignUp() {
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className=" mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Username
@@ -189,14 +209,7 @@ export default function SignUp() {
 
           <div className=" mb-4">
             <label>Profile Picture</label>
-            <input
-              type="text"
-              name="profile_picture"
-              value={formData.profile_picture}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-            />
+            <input type="file" accept="image/*" onChange={handleImageChange} />
           </div>
 
           <div className=" mb-4">

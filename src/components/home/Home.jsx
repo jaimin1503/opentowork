@@ -121,11 +121,14 @@ export default function Home() {
           <h1 className=" gradient_text">Brows by caragories:</h1>
           <div className="cata-row1">
             <div className="cata_boxes">
-              <div className="the-box" style={{ transition: "0.3s" }}>
-                <img className="the_img" src={it} alt="ai" />
-                <h2 className="box-w-text text-3xl">Development & IT</h2>
-                <p className="box-g-text text-xl">1000+ Skills</p>
-              </div>
+              <Link to="/DevIt">
+                <div className="the-box" style={{ transition: "0.3s" }}>
+                  <img className="the_img" src={it} alt="ai" />
+                  <h2 className="box-w-text text-3xl">Development & IT</h2>
+                  <p className="box-g-text text-xl">1000+ Skills</p>
+                </div>
+              </Link>
+
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={ai} alt="ai" />
                 <h2 className="box-w-text text-3xl">AI Services</h2>
@@ -133,11 +136,13 @@ export default function Home() {
               </div>
             </div>
             <div className="cata_boxes2">
-              <div className="the-box" style={{ transition: "0.3s" }}>
-                <img className="the_img" src={design} alt="ai" />
-                <h2 className="box-w-text text-3xl">Design & Creation</h2>
-                <p className="box-g-text text-xl">900+ Skills</p>
-              </div>
+              <Link to="/Design">
+                <div className="the-box" style={{ transition: "0.3s" }}>
+                  <img className="the_img" src={design} alt="ai" />
+                  <h2 className="box-w-text text-3xl">Design & Creation</h2>
+                  <p className="box-g-text text-xl">900+ Skills</p>
+                </div>
+              </Link>
               <div className="the-box" style={{ transition: "0.3s" }}>
                 <img className="the_img" src={business} alt="ai" />
                 <h2 className="box-w-text text-3xl">Sales & Marketing</h2>
@@ -156,7 +161,7 @@ export default function Home() {
                 fixes to lasting solutions.
               </h2>
               <div className="find">
-                <Link to="/AllPosts">
+                <Link to="/Welcome">
                   <h3 className=" text-white text-xl p-2">
                     Your Project, Our Expertise.
                     <p>&rarr;</p>
@@ -164,7 +169,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="find">
-                <Link to="/AllPosts">
+                <Link to="/Welcome">
                   <h3 className=" text-white text-xl p-2">
                     Quality Freelancers, Quality Work.
                     <p>&rarr;</p>

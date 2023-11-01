@@ -11,6 +11,7 @@ import Display from "../display/Display";
 import ChangeImage from "../changeImage/ChangeImage";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function DevIT() {
   return (
@@ -59,12 +60,14 @@ export default function DevIT() {
           />
         </div>
         <div className="button flex justify-center py-10">
-          <button
-            className="bg-purple-500 py-3 px-10 text-white rounded-full hover:scale-105"
-            style={{ transition: "0.3s" }}
-          >
-            Join Now
-          </button>
+          <Link to="/Welcome">
+            <button
+              className="bg-purple-500 py-3 px-10 text-white rounded-full hover:scale-105"
+              style={{ transition: "0.3s" }}
+            >
+              Join Now
+            </button>
+          </Link>
         </div>
       </div>
       <Footer />

@@ -22,6 +22,7 @@ import Languages from "../languages/Languages";
 import ChangeImage from "../changeImage/ChangeImage";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function DevIT() {
   return (
@@ -68,7 +69,9 @@ export default function DevIT() {
         </div>
         <div className="row4">
           <div className="button">
-            <button>Join Now</button>
+            <Link to="/Welcome">
+              <button>Join Now</button>
+            </Link>
           </div>
           <div className="row3-photos">
             <img src={display1} alt="img" />
