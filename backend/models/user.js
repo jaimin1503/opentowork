@@ -24,12 +24,11 @@ const userSchema = mongoose.Schema({
     type: "string",
     required: true,
   },
-  // profile_picture: [
-  //   {
-  //     url: String,
-  //     fileName: String,
-  //   },
-  // ],
+  profile_picture: {
+    type: "string",
+    default:
+      "https://res.cloudinary.com/dtuuyvimi/image/upload/v1698836702/OpenToWork/tqlskn97ccqwvglon5ah.jpg",
+  },
   description: {
     type: "string",
     default: "",

@@ -2,8 +2,13 @@ import express from "express";
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
 import passport from "passport";
+import multer from "multer";
+import { storage } from "../cloudinary/index.js";
+const upload = multer({ storage });
 
 const router = express.Router();
+
+// const cpUpload = upload.fields([{ name: "profile_picture", maxCount: 1 }]);
 
 router.post("/", async (req, res) => {
   try {
@@ -25,11 +30,17 @@ router.post("/", async (req, res) => {
       password: hash,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
+      profile_picture: req.body.url,
       description: req.body.description,
       skills: req.body.skills,
       location: req.body.location,
       hourly_rate: req.body.hourly_rate,
     };
+    // const profilePic = req.files["profile_picture"][0];
+    // user.profile_picture = {
+    //   url: profilePic.path, // Use thumbnailResult.secure_url if it's a Cloudinary URL
+    //   filename: profilePic.filename,
+    // };
     const user = await User.create(newUser);
     return res.status(201).send(user);
   } catch (error) {

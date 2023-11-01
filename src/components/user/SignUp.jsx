@@ -76,6 +76,7 @@ export default function SignUp() {
     const file = e.target.files[0];
     setImage(file);
   };
+  const [url, setUrl] = useState("");
 
   const handleImageUpload = async () => {
     const data = new FormData();
@@ -89,7 +90,8 @@ export default function SignUp() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setUrl(data.url);
+        console.log(data.url);
       })
       .catch((error) => {
         console.log(error);
@@ -127,7 +129,7 @@ export default function SignUp() {
         ...formData,
         location: locationValue,
         skills: personName,
-        profile_picture: formData.profile_picture,
+        profile_picture: url,
         description: formData.description,
         hourly_rate: formData.hourly_rate,
       })
@@ -213,7 +215,13 @@ export default function SignUp() {
 
           <div className=" mb-4">
             <label>Profile Picture</label>
-            <input type="file" accept="image/*" onChange={handleImageChange} />
+
+            <input
+              name="profile_picture"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
             <button
               className=" bg-gray-200 border-2 px-1 py-1 rounded-full"
               onClick={handleImageUpload}

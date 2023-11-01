@@ -37,7 +37,7 @@ export default function FreeLancer() {
               <div className="profile_pic">
                 <img
                   className="w-32 h-32 object-cover rounded-full m-10"
-                  src="https://res.cloudinary.com/dtuuyvimi/image/upload/v1698832542/OpenToWork/mshbmy36gkwpcod0a3c2.jpg"
+                  src={user.profile_picture}
                   alt="Profile_pic"
                 />
               </div>
