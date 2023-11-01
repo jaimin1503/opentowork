@@ -37,12 +37,14 @@ export default function FreeLancer() {
               <div className="profile_pic">
                 <img
                   className="w-32 h-32 object-cover rounded-full m-10"
-                  src={user.profile_picture}
+                  src={
+                    !user.profile_picture ? default_pic : user.profile_picture
+                  }
                   alt="Profile_pic"
                 />
               </div>
               <div className="profile_info">
-                <h1 className=" text-3xl font-bold py-2">{user.first_name}</h1>
+                <h1 className=" text-3xl font-bold py-2">{user.username}</h1>
                 <h2 className=" text-xl text-gray-500 py-2">
                   -{user.location}
                 </h2>
@@ -50,7 +52,7 @@ export default function FreeLancer() {
             </div>
             <div className="profile_row2">
               <h1 className="text-3xl p-10">Computer Engineering Student</h1>
-              <h2 className="px-10 text-justify text-gray-500">
+              <h2 className=" max-w-[70%] px-10 text-justify text-gray-500">
                 {user.description}
               </h2>
               <h2 className="p-10 font-bold"> &#8377;{user.hourly_rate}/hr</h2>

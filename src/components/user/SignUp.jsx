@@ -129,9 +129,9 @@ export default function SignUp() {
         ...formData,
         location: locationValue,
         skills: personName,
-        profile_picture: url,
         description: formData.description,
         hourly_rate: formData.hourly_rate,
+        profile_picture: url,
       })
       .then(() => {
         setLoading(false);

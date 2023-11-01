@@ -34,7 +34,7 @@ export default function Navlogged() {
             <li className=" cursor-pointer">
               <img src={saved} alt="" />
             </li>
-            <Link to={`/FreeLancer/654236db53dfdefc51650d63`}>
+            <Link to={`/FreeLancer/65423c2a8390d1f575762a01`}>
               <li className=" cursor-pointer">
                 <img src={profile} alt="" />
               </li>
