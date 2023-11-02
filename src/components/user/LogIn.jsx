@@ -1,35 +1,43 @@
 import axios from "axios";
-// import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const [formData, setFormData] = useState({ username: "", password: "" });
+  const [error, setError] = useState(""); // State to store error messages
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError(""); // Clear any previous errors
+
     axios
-      .get("http://localhost:5555/login", {
-        ...formData,
-      })
+      .post("http://localhost:5555/users/login", formData) // Use POST for sending login data
       .then(() => {
         navigate("/AllPosts");
       })
       .catch((error) => {
-        alert("Error occured");
-        console.log(error.message);
+        if (error.response && error.response.data.message) {
+          setError(error.response.data.message);
+        } else {
+          setError("An error occurred during login.");
+        }
+        console.log(error);
       });
   };
+
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
         <form className="w-64" onSubmit={handleSubmit}>
           <h2 className="text-2xl font-semibold mb-4">Login</h2>
+          {error && <div className="text-red-500 mb-4">{error}</div>}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

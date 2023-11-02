@@ -1,10 +1,6 @@
 import express from "express";
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
-import passport from "passport";
-import multer from "multer";
-import { storage } from "../cloudinary/index.js";
-const upload = multer({ storage });
 
 const router = express.Router();
 
@@ -36,11 +32,7 @@ router.post("/", async (req, res) => {
       location: req.body.location,
       hourly_rate: req.body.hourly_rate,
     };
-    // const profilePic = req.files["profile_picture"][0];
-    // user.profile_picture = {
-    //   url: profilePic.path, // Use thumbnailResult.secure_url if it's a Cloudinary URL
-    //   filename: profilePic.filename,
-    // };
+
     const user = await User.create(newUser);
     return res.status(201).send(user);
   } catch (error) {
@@ -55,6 +47,49 @@ router.get("/", async (req, res) => {
     res.status(201).json({
       count: users.length,
       data: users,
+    });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
+
+router.post("/login", async (req, res) => {
+  try {
+    if (!req.body.username) {
+      return res.status(400).send({
+        message: "Please provide a username for login.",
+      });
+    }
+
+    if (!req.body.password) {
+      return res.status(400).send({
+        message: "Please provide a password for login.",
+      });
+    }
+
+    const { username, password } = req.body;
+
+    // Check if the user exists based on username or email
+    const user = await User.findOne({ $or: [{ username }] });
+
+    if (!user) {
+      return res.status(404).send({
+        message: "User not found. Please check your username or email.",
+      });
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatch) {
+      return res.status(401).send({
+        message: "Invalid password. Please try again.",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Login successful",
+      user: user,
     });
   } catch (error) {
     console.log(error.message);
