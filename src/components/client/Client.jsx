@@ -44,7 +44,9 @@ export default function Client() {
                 <img
                   className="w-32 h-32 object-cover rounded-full m-10"
                   src={
-                    !email.profile_picture ? default_pic : email.profile_picture
+                    !client.profile_picture
+                      ? default_pic
+                      : client.profile_picture
                   }
                   alt="Profile_pic"
                 />
