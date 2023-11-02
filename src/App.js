@@ -9,6 +9,8 @@ import NewPost from "./components/NewPost/NewPost";
 import AllPosts from "./components/allposts/AllPosts";
 import SignUp from "./components/user/SignUp";
 import LogIn from "./components/user/LogIn";
+import ClientSign from "./components/user/ClientSign";
+import ClientLog from "./components/user/ClientLog";
 
 function App() {
   return (
@@ -19,11 +21,13 @@ function App() {
         <Route path="/DevIT" element={<DevIT />}></Route>
         <Route path="/Design" element={<Design />}></Route>
         <Route path="/NewPost" element={<NewPost />}></Route>
-        <Route path="/Client" element={<Client />}></Route>
         <Route path="/FreeLancer/:username" element={<FreeLancer />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
         <Route path="/Login" element={<LogIn />}></Route>
+        <Route path="/Clientsign" element={<ClientSign />}></Route>
+        <Route path="/Clientlog" element={<ClientLog />}></Route>
+        <Route path="/Client/:email" element={<Client />}></Route>
       </Routes>
     </div>
   );

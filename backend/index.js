@@ -8,6 +8,7 @@ import usersRoute from "./routes/usersRoute.js";
 import cors from "cors";
 import LocalStrategy from "passport-local";
 import { User } from "./models/user.js";
+import clientRoute from "./routes/clientRoute.js";
 
 const app = express();
 app.use(express.json());
@@ -35,15 +36,7 @@ app.get("/", (req, res) => {
 
 app.use("/posts", postsRoute);
 app.use("/users", usersRoute);
-
-app.get(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-    // failureFlash: true,
-  })
-);
+app.use("/clients", clientRoute);
 
 mongoose
   .connect(mongoURL)

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function Welcome() {
   const [text, setText] = useState({ buttontag: "Apply as client" });
-  const [role, setRole] = useState("/Client");
+  const [role, setRole] = useState("/Clientsign");
   function handleChange(event) {
     if (text.buttontag === "Apply as client") {
       setRole("/SignUp");
     } else if (text.buttontag === "Apply as freelancer") {
-      setRole("/Client");
+      setRole("/Clientsign");
     }
     const { name, value } = event.target;
     setText((pre) => {

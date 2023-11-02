@@ -20,7 +20,6 @@ export default function Navlogged() {
           <ul className="flex justify-around list-none  items-center py-2 ">
             <li className=" flex items-center">
               {" "}
-              {/* <img className=" absolute z-10" src={search} alt="" /> */}
               <input
                 className=" relative rounded-full border-2 p-1 pl-5 pr-8 "
                 placeholder="Search"
