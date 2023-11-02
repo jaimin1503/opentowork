@@ -6,7 +6,6 @@ export default function LogIn() {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState(""); // State to store error messages
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +19,7 @@ export default function LogIn() {
     axios
       .post("http://localhost:5555/users/login", formData) // Use POST for sending login data
       .then(() => {
-        navigate("/AllPosts");
+        navigate(`/FreeLancer/${formData.username}`);
       })
       .catch((error) => {
         if (error.response && error.response.data.message) {

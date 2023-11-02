@@ -7,23 +7,29 @@ import Spinner from "../Spinner";
 import axios from "axios";
 
 export default function FreeLancer() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
-  const { id } = useParams();
+  const { username } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`http://localhost:5555/users/${id}`)
-      .then((res) => {
-        setUser(res.data.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, [id]);
+    if (username) {
+      // Proceed with the request
+      axios
+        .get(`http://localhost:5555/users/${username}`)
+        .then((res) => {
+          setUser(res.data.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setLoading(false);
+        });
+    } else {
+      console.error("Invalid or missing user username");
+      setLoading(false);
+    }
+  }, [username]);
 
   return (
     <div>

@@ -2,7 +2,6 @@ import logo from "./assets/586273b931349e0568ad89df.png";
 import profile from "./assets/account_circle_FILL0_wght400_GRAD0_opsz24.png";
 import saved from "./assets/favorite_FILL0_wght400_GRAD0_opsz24.png";
 import notification from "./assets/notifications_FILL0_wght400_GRAD0_opsz24.png";
-import { Link } from "react-router-dom";
 
 export default function Navlogged() {
   return (
@@ -34,11 +33,9 @@ export default function Navlogged() {
             <li className=" cursor-pointer">
               <img src={saved} alt="" />
             </li>
-            <Link to={`/FreeLancer/65423c2a8390d1f575762a01`}>
-              <li className=" cursor-pointer">
-                <img src={profile} alt="" />
-              </li>
-            </Link>
+            <li className=" cursor-pointer">
+              <img src={profile} alt="" />
+            </li>
           </ul>
         </div>
       </div>

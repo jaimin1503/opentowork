@@ -135,7 +135,7 @@ export default function SignUp() {
       })
       .then(() => {
         setLoading(false);
-        navigate("/AllPosts");
+        navigate("/Login");
       })
       .catch((error) => {
         setLoading(false);
