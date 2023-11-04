@@ -11,6 +11,7 @@ import SignUp from "./components/user/SignUp";
 import LogIn from "./components/user/LogIn";
 import ClientSign from "./components/user/ClientSign";
 import ClientLog from "./components/user/ClientLog";
+import EditProfile from "./components/user/EditProfile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Design" element={<Design />}></Route>
         <Route path="/NewPost" element={<NewPost />}></Route>
         <Route path="/FreeLancer/:username" element={<FreeLancer />}></Route>
+        <Route path="/FrLancer/:id" element={<EditProfile />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
         <Route path="/Login" element={<LogIn />}></Route>

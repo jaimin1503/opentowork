@@ -111,7 +111,7 @@ router.get("/:username", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:username", async (req, res) => {
   try {
     if (
       !req.body.username ||
@@ -124,9 +124,9 @@ router.put("/:id", async (req, res) => {
         message: "please fill all the required details",
       });
     }
-    const { id } = req.params;
+    const { username } = req.params;
 
-    const result = await User.findByIdAndUpdate(id, req.body);
+    const result = await User.findByIdAndUpdate(username, req.body);
 
     if (!result) {
       return res.status(404).json({ message: "User Not Found" });
