@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
   const [text, setText] = useState({ buttontag: "Apply as client" });
   const [role, setRole] = useState("/Clientsign");
+  const [login, setLogin] = useState("/Clientlog");
   function handleChange(event) {
     if (text.buttontag === "Apply as client") {
       setRole("/SignUp");
@@ -18,7 +19,13 @@ export default function Welcome() {
         [name]: value,
       };
     });
+    if (role === "/Clientsign") {
+      setLogin("/Login");
+    } else if (role === "/SignUp") {
+      setLogin("/Clientlog");
+    }
   }
+
   const mystyle = {
     fontFamily: `'Lobster', cursive`,
   };
@@ -81,7 +88,7 @@ export default function Welcome() {
           </Link>
           <p className="well-mt-5">
             Already have an account{" "}
-            <Link className="wel-text-purple-600" to="/Login">
+            <Link className="wel-text-purple-600" to={login}>
               Log in
             </Link>
           </p>
