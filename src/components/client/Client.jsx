@@ -5,6 +5,7 @@ import Navlogged from "../navbar_logged/Navlogged";
 import default_pic from "./assets/default_profile_picture.jpg";
 import Spinner from "../Spinner";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Client() {
   const [client, setClient] = useState({});
@@ -101,6 +102,16 @@ export default function Client() {
               <h2 className=" max-w-[70%] px-10 text-justify text-gray-500">
                 {client.about}
               </h2>
+            </div>
+            <div className="button_post flex justify-center text-sm items-center my-10 ">
+              <Link to="/NewPost">
+                <button
+                  className=" text-white py-2 px-5 bg-purple-500 rounded-full hover:scale-105 hover:bg-purple-600"
+                  style={{ transition: "0.3s" }}
+                >
+                  Post new job
+                </button>
+              </Link>
             </div>
           </div>
         </div>
