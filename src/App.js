@@ -22,7 +22,7 @@ function App() {
         <Route path="/DevIT" element={<DevIT />}></Route>
         <Route path="/Design" element={<Design />}></Route>
         <Route path="/NewPost" element={<NewPost />}></Route>
-        <Route path="/FreeLancer/:username" element={<FreeLancer />}></Route>
+        <Route path="/FreeLancer/:id" element={<FreeLancer />}></Route>
         <Route path="/FrLancer/:id" element={<EditProfile />}></Route>
         <Route path="/AllPosts" element={<AllPosts />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
