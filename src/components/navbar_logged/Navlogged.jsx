@@ -1,9 +1,9 @@
 import logo from "./assets/586273b931349e0568ad89df.png";
-import profile from "./assets/account_circle_FILL0_wght400_GRAD0_opsz24.png";
+// import profile from "./assets/account_circle_FILL0_wght400_GRAD0_opsz24.png";
 import saved from "./assets/favorite_FILL0_wght400_GRAD0_opsz24.png";
 import notification from "./assets/notifications_FILL0_wght400_GRAD0_opsz24.png";
 
-export default function Navlogged() {
+export default function Navlogged(props) {
   return (
     <div>
       <div className="navbar flex justify-between">
@@ -33,7 +33,11 @@ export default function Navlogged() {
               <img src={saved} alt="" />
             </li>
             <li className=" cursor-pointer">
-              <img src={profile} alt="" />
+              <img
+                className="w-8 h-8 object-cover rounded-full"
+                src={props.profilepic}
+                alt="profilepic"
+              />
             </li>
           </ul>
         </div>

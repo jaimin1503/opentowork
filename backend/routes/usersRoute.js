@@ -83,7 +83,7 @@ router.post("/login", async (req, res) => {
 
     if (!passwordMatch) {
       return res.status(401).send({
-        message: "Invalid password. Please try again.",
+        message: "Invalid Username or password. Please try again.",
       });
     }
 
@@ -116,7 +116,6 @@ router.put("/:id", async (req, res) => {
     if (
       !req.body.username ||
       !req.body.email ||
-      !req.body.password ||
       !req.body.first_name ||
       !req.body.last_name ||
       !req.body.description ||
