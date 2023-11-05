@@ -97,10 +97,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/:username", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const { username } = req.params;
-    const user = await User.findOne({ username });
+    const { id } = req.params;
+    const user = await User.findById(id);
     res.status(201).json({
       count: user.length,
       data: user,
@@ -118,7 +118,11 @@ router.put("/:id", async (req, res) => {
       !req.body.email ||
       !req.body.password ||
       !req.body.first_name ||
-      !req.body.last_name
+      !req.body.last_name ||
+      !req.body.description ||
+      !req.body.location ||
+      !req.body.skills ||
+      !req.body.hourly_rate
     ) {
       return res.status(400).send({
         message: "please fill all the required details",

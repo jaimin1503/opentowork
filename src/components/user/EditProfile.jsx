@@ -69,7 +69,6 @@ export default function EditProfile() {
     setLocation(selectedOption);
   };
 
-  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -77,8 +76,9 @@ export default function EditProfile() {
     const file = e.target.files[0];
     setImage(file);
   };
+
+  const [image, setImage] = useState(null);
   const [user, setUser] = useState({});
-  const [url, setUrl] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
@@ -96,11 +96,13 @@ export default function EditProfile() {
           setLoading(false);
         });
     } else {
-      console.log(id);
-      // console.error("Invalid or missing user username");
+      // console.log(id);
+      console.error("Invalid or missing username");
       setLoading(false);
     }
   }, [id]);
+
+  const [url, setUrl] = useState("");
 
   const handleImageUpload = async () => {
     const data = new FormData();
@@ -159,7 +161,7 @@ export default function EditProfile() {
       })
       .then(() => {
         setLoading(false);
-        navigate("/Login");
+        navigate(`/FreeLancer/${id}`);
       })
       .catch((error) => {
         setLoading(false);
