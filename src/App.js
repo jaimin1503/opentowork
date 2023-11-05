@@ -12,6 +12,7 @@ import LogIn from "./components/user/LogIn";
 import ClientSign from "./components/user/ClientSign";
 import ClientLog from "./components/user/ClientLog";
 import EditProfile from "./components/user/EditProfile";
+import ClientPost from "./components/allposts/ClientPost";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
         <Route path="/Login" element={<LogIn />}></Route>
         <Route path="/Clientsign" element={<ClientSign />}></Route>
         <Route path="/Clientlog" element={<ClientLog />}></Route>
-        <Route path="/Client/:email" element={<Client />}></Route>
+        <Route path="/Client/:id" element={<Client />}></Route>
+        <Route path="/Client/:id/posts" element={<ClientPost />}></Route>
       </Routes>
     </div>
   );

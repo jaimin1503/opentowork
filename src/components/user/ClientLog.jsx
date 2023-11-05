@@ -18,8 +18,9 @@ export default function ClientLog() {
 
     axios
       .post("http://localhost:5555/clients/login", formData) // Use POST for sending login data
-      .then(() => {
-        navigate(`/Client/${formData.email}`);
+      .then((response) => {
+        const client = response.data.client;
+        navigate(`/Client/${client._id}`);
       })
       .catch((error) => {
         if (error.response && error.response.data.message) {

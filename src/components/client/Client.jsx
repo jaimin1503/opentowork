@@ -9,14 +9,14 @@ import axios from "axios";
 export default function Client() {
   const [client, setClient] = useState({});
   const [loading, setLoading] = useState(false);
-  const { email } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    if (email) {
+    if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/clients/${email}`)
+        .get(`http://localhost:5555/clients/${id}`)
         .then((res) => {
           setClient(res.data.data);
           setLoading(false);
@@ -29,11 +29,14 @@ export default function Client() {
       console.error("Invalid or missing user email");
       setLoading(false);
     }
-  }, [email]);
+  }, [id]);
 
   return (
     <div>
-      <Navlogged />
+      <Navlogged
+        profilepic={client.profile_picture}
+        myjobs={`/Client/${client._id}/posts`}
+      />
       {loading ? (
         <Spinner />
       ) : (
@@ -99,17 +102,6 @@ export default function Client() {
                 {client.about}
               </h2>
             </div>
-            {/* <div className="mx-8 flex">
-              {user.skills.map((skill) => {
-                return (
-                  <div key={skill} className="mx-2">
-                    <div className="px-5 py-1 border-2 rounded-full border-purple-200 bg-purple-100 max-w-32 flex justify-center items-center text-sm">
-                      {skill}
-                    </div>
-                  </div>
-                );
-              })}
-            </div> */}
           </div>
         </div>
       )}

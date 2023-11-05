@@ -94,10 +94,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/:email", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const { email } = req.params;
-    const client = await Client.findOne({ email });
+    const { id } = req.params;
+    const client = await Client.findById(id);
     res.status(201).json({
       count: client.length,
       data: client,
@@ -146,6 +146,20 @@ router.delete("/:id", async (req, res) => {
     }
 
     return res.status(200).send({ message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
+
+router.get("/:id/posts", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const client = await Client.findById(id).populate("posts");
+    res.status(201).json({
+      count: client.posts.length,
+      data: client.posts,
+    });
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
