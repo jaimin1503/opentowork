@@ -79,14 +79,14 @@ export default function EditProfile() {
   };
   const [user, setUser] = useState({});
   const [url, setUrl] = useState("");
-  const { username } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    if (username) {
+    if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/users/${username}`)
+        .get(`http://localhost:5555/users/${id}`)
         .then((res) => {
           setUser(res.data.data);
           setLoading(false);
@@ -96,10 +96,11 @@ export default function EditProfile() {
           setLoading(false);
         });
     } else {
-      console.error("Invalid or missing user username");
+      console.log(id);
+      // console.error("Invalid or missing user username");
       setLoading(false);
     }
-  }, [username]);
+  }, [id]);
 
   const handleImageUpload = async () => {
     const data = new FormData();
@@ -148,7 +149,7 @@ export default function EditProfile() {
     e.preventDefault();
     setLoading(true);
     axios
-      .put(`http://localhost:5555/users/${username}`, {
+      .put(`http://localhost:5555/users/${id}`, {
         ...formData,
         location: locationValue,
         skills: personName,
@@ -162,7 +163,7 @@ export default function EditProfile() {
       })
       .catch((error) => {
         setLoading(false);
-        alert("Arror occured");
+        alert("Error occured");
         console.log(error);
       });
   };
@@ -182,7 +183,7 @@ export default function EditProfile() {
               type="text"
               name="username"
               value={formData.username}
-              placeholder={formData.username}
+              placeholder={user.username}
               onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"

@@ -10,27 +10,28 @@ import { Link } from "react-router-dom";
 export default function FreeLancer() {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
-  const { username } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    if (username) {
+    if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/users/${username}`)
+        .get(`http://localhost:5555/users/${id}`)
         .then((res) => {
           setUser(res.data.data);
           setLoading(false);
         })
         .catch((error) => {
           console.log(error);
+          console.log(error.message);
           setLoading(false);
         });
     } else {
       console.error("Invalid or missing user username");
       setLoading(false);
     }
-  }, [username]);
+  }, [id]);
 
   return (
     <div>
