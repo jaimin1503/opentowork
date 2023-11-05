@@ -74,12 +74,12 @@ export default function DevIT() {
             </Link>
           </div>
           <div className="row3-photos">
-            <img src={display1} alt="img" />
-            <img src={display2} alt="img" />
+            <img className="h-[20vh] w-[30vw]" src={display1} alt="img" />
+            <img className="h-[20vh] w-[30vw]" src={display2} alt="img" />
           </div>
           <div className="row3-photos">
-            <img src={display3} alt="img" />
-            <img src={display4} alt="img" />
+            <img className="h-[20vh] w-[30vw]" src={display3} alt="img" />
+            <img className="h-[20vh] w-[30vw]" src={display4} alt="img" />
           </div>
         </div>
       </div>

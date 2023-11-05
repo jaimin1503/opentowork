@@ -129,6 +129,8 @@ router.put("/:id", async (req, res) => {
     }
     const { id } = req.params;
 
+    // const bpwd = await bcrypt.hash(req.body.password, 10);
+
     const result = await User.findByIdAndUpdate(id, req.body);
 
     if (!result) {

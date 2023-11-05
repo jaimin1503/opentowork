@@ -6,6 +6,7 @@ import default_pic from "./assets/default_profile_picture.jpg";
 import Spinner from "../Spinner";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FaMapMarker } from "react-icons/fa";
 
 export default function FreeLancer() {
   const [user, setUser] = useState({});
@@ -40,8 +41,8 @@ export default function FreeLancer() {
         <Spinner />
       ) : (
         <div>
-          <div className="border-2 border-purple-600 rounded-xl w-[70vw] h-[80vh] m-auto mt-10">
-            <div className="profile_row1 flex justify-between p-5 border-b-2 border-purple-600">
+          <div className="border-[1px] border-purple-600 rounded-xl w-[70vw] h-[80vh] m-auto mt-10">
+            <div className="profile_row1 flex justify-between p-5 border-b-[1px] border-purple-600">
               <div className="left_profile flex justify-center items-center">
                 <div className="profile_pic">
                   <img
@@ -54,8 +55,9 @@ export default function FreeLancer() {
                 </div>
                 <div className="profile_info">
                   <h1 className=" text-3xl font-bold py-2">{user.username}</h1>
-                  <h2 className=" text-xl text-gray-500 py-2">
-                    -{user.location}
+                  <h2 className=" text-xl text-gray-500 py-2 flex items-center">
+                    <FaMapMarker size={14} color="red" className="mx-2" />
+                    {user.location}
                   </h2>
                 </div>
               </div>
