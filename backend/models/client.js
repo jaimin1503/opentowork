@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-import passportLocalMongoose from "passport-local-mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const clientSchema = mongoose.Schema({
   first_name: {
@@ -35,8 +34,12 @@ const clientSchema = mongoose.Schema({
     type: "string",
     default: "India",
   },
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post",
+    },
+  ],
 });
-
-clientSchema.plugin(passportLocalMongoose);
 
 export const Client = mongoose.model("Client", clientSchema);

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const postSchema = mongoose.Schema({
   title: {
@@ -40,6 +40,12 @@ const postSchema = mongoose.Schema({
     required: true,
     default: "India",
   },
+  client: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Client",
+    },
+  ],
 });
 
 export const Post = mongoose.model("Post", postSchema);
