@@ -7,19 +7,34 @@ import Navlogged from "../navbar_logged/Navlogged";
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5555/posts")
+      .get(`http://localhost:5555/posts?page=${page}`)
       .then((res) => {
-        setPosts(res.data.data);
+        const newPosts = res.data.data;
+        if (newPosts.length === 0) {
+          setHasMore(false); // No more posts to load
+        } else {
+          setPosts(res.data.data);
+        }
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
         setLoading(false);
       });
-  }, []);
+  }, [page]);
+
+  const loadMorePosts = () => {
+    if (hasMore) {
+      setPage(page + 1);
+    }
+  };
+
   return (
     <div>
       <Navlogged />
@@ -62,6 +77,15 @@ export default function AllPosts() {
               </div>
             );
           })}
+          <div className="button_loadmore flex justify-center items-center my-3">
+            <button
+              className=" py-2 px-5 bg-purple-500 rounded-full hover:bg-purple-600"
+              onClick={loadMorePosts}
+              disabled={!hasMore}
+            >
+              {hasMore ? "Next Page" : "No More Posts"}
+            </button>
+          </div>
         </div>
       )}
     </div>

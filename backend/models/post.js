@@ -40,12 +40,12 @@ const postSchema = mongoose.Schema({
     required: true,
     default: "India",
   },
-  client: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Client",
-    },
-  ],
+  // client: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Client",
+  //   },
+  // ],
 });
 
 export const Post = mongoose.model("Post", postSchema);

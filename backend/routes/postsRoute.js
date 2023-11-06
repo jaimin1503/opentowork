@@ -5,13 +5,22 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.find({});
-    res.status(201).json({
-      count: posts.length,
+    const page = parseInt(req.query.page) || 1;
+    const perPage = 5;
+
+    const skip = (page - 1) * perPage;
+
+    // Use your custom "Post" model to query the database.
+    const posts = await Post.find({}).skip(skip).limit(perPage);
+
+    res.status(200).json({
+      page: page,
+      perPage: perPage,
+      totalPosts: await Post.countDocuments(),
       data: posts,
     });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     res.status(500).send({ message: error.message });
   }
 });
