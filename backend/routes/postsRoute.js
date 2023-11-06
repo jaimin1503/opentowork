@@ -1,10 +1,16 @@
 import express from "express";
 import { Post } from "../models/post.js";
+import { Client } from "../models/client.js";
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
+  const { id } = req.params;
   try {
+    const client = Client.findById(id);
+    if (!client) {
+      return res.status(404).json({ error: "User not found." });
+    }
     if (
       !req.body.title ||
       !req.body.description ||
@@ -28,6 +34,8 @@ router.post("/", async (req, res) => {
       // status: req.body.status,
     };
     const post = await Post.create(newPost);
+    client.posts.push(post);
+    await client.save();
     return res.status(201).send(post);
   } catch (error) {
     console.log(error.message);

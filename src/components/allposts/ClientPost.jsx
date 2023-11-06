@@ -9,22 +9,19 @@ export default function ClientPost() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
-  useEffect(
-    (id) => {
-      setLoading(true);
-      axios
-        .get(`http://localhost:5555/clients/${id}/posts`)
-        .then((res) => {
-          setPosts(res.data.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.log(error);
-          setLoading(false);
-        });
-    },
-    [id]
-  );
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(`http://localhost:5555/clients/${id}/posts`)
+      .then((res) => {
+        setPosts(res.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, [id]);
   return (
     <div>
       <Navlogged />
