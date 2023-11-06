@@ -36,7 +36,7 @@ export default function ClientPost() {
                   <div className=" p-5 text-xl font-bold tracking-wider">
                     -{post.title}
                   </div>
-                  askjf
+
                   <div className=" p-3">{post.description}</div>
                   <div className="m-3 flex">
                     {post.skillsRequired.map((skill) => {

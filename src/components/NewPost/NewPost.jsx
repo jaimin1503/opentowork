@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import "../Spinner";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../Spinner";
 import Select from "react-select";
 import countryList from "react-select-country-list";
@@ -51,6 +51,28 @@ function getStyles(name, personName, theme) {
 }
 
 function NewPost() {
+  const [client, setClient] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    setLoading(true);
+    if (id) {
+      // Proceed with the request
+      axios
+        .get(`http://localhost:5555/clients/${id}`)
+        .then((res) => {
+          setClient(res.data.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setLoading(false);
+        });
+    } else {
+      console.error("Invalid or missing user email");
+      setLoading(false);
+    }
+  }, [id]);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -94,7 +116,7 @@ function NewPost() {
     event.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:5555/posts", {
+      .post(`http://localhost:5555/clients/${client._id}/posts`, {
         ...formData,
         location: locationValue,
         skillsRequired: personName,

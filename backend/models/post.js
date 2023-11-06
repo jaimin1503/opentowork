@@ -32,7 +32,7 @@ const postSchema = mongoose.Schema({
   },
   deadline: {
     type: Date,
-    required: true,
+    // required: true,
     default: Date.now, // Add a default date, if needed
   },
   location: {

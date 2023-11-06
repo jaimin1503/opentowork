@@ -13,9 +13,9 @@ export default function Navlogged(props) {
             <li className=" cursor-pointer logo w-8 h-8">
               <img src={logo} alt="logo" />
             </li>
-            <li class="mr-4 group relative cursor-pointer">
+            <li className="mr-4 group relative cursor-pointer">
               Services
-              <ul class="absolute hidden rounded-lg w-36 group-hover:block bg-gray-100 py-2 px-8 space-y-1">
+              <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-gray-100 py-2 px-8 space-y-1">
                 <Link to="/AllPosts">
                   <li className=" text-sm py-1">Browse Jobs</li>
                 </Link>
