@@ -4,8 +4,6 @@ import bcrypt from "bcrypt";
 
 const router = express.Router();
 
-// const cpUpload = upload.fields([{ name: "profile_picture", maxCount: 1 }]);
-
 router.post("/", async (req, res) => {
   try {
     if (

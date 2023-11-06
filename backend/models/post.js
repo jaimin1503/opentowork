@@ -32,20 +32,20 @@ const postSchema = mongoose.Schema({
   },
   deadline: {
     type: Date,
-    // required: true,
-    default: Date.now, // Add a default date, if needed
+    required: true,
+    default: Date.now,
   },
   location: {
     type: String,
     required: true,
     default: "India",
   },
-  // client: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Client",
-  //   },
-  // ],
+  client: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Client",
+    },
+  ],
 });
 
 export const Post = mongoose.model("Post", postSchema);

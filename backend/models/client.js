@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
 
 const clientSchema = mongoose.Schema({
   first_name: {
@@ -41,5 +42,7 @@ const clientSchema = mongoose.Schema({
     },
   ],
 });
+
+clientSchema.plugin(passportLocalMongoose);
 
 export const Client = mongoose.model("Client", clientSchema);
