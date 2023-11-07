@@ -49,6 +49,7 @@ export default function ClientLog() {
               className="w-full border rounded py-2 px-3"
               type="email"
               name="email"
+              autoComplete="current-email"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -65,6 +66,7 @@ export default function ClientLog() {
               className="w-full border rounded py-2 px-3"
               type="password"
               name="password"
+              autoComplete="current-password"
               value={formData.password}
               onChange={handleInputChange}
               required

@@ -33,23 +33,30 @@ export default function ClientSign() {
   const [url, setUrl] = useState("");
 
   const handleImageUpload = async () => {
-    const data = new FormData();
-    data.append("file", image);
-    data.append("upload_preset", "h5veomwh");
-    data.append("cloud_name", "dtuuyvimi");
+    try {
+      const data = new FormData();
+      data.append("file", image);
+      data.append("upload_preset", "h5veomwh");
+      data.append("cloud_name", "dtuuyvimi");
 
-    fetch("http://api.cloudinary.com/v1_1/dtuuyvimi/image/upload", {
-      method: "post",
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setUrl(data.url);
-        console.log(data.url);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      const response = await fetch(
+        "http://api.cloudinary.com/v1_1/dtuuyvimi/image/upload",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Image upload failed with status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      setUrl(responseData.url);
+      console.log(responseData.url);
+    } catch (error) {
+      console.error("Error while uploading image:", error);
+    }
   };
 
   const handleInputChange = (event) => {
@@ -73,7 +80,7 @@ export default function ClientSign() {
       })
       .then(() => {
         setLoading(false);
-        navigate("/Login");
+        navigate("/Clientlog");
       })
       .catch((error) => {
         setLoading(false);

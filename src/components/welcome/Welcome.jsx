@@ -6,6 +6,7 @@ export default function Welcome() {
   const [text, setText] = useState({ buttontag: "Apply as client" });
   const [role, setRole] = useState("/Clientsign");
   const [login, setLogin] = useState("/Clientlog");
+
   function handleChange(event) {
     if (text.buttontag === "Apply as client") {
       setRole("/SignUp");
@@ -29,22 +30,27 @@ export default function Welcome() {
   const mystyle = {
     fontFamily: `'Lobster', cursive`,
   };
+
+  function handleRadioButtonClick(value) {
+    setText({ buttontag: value });
+  }
+
   return (
     <div className="wel-text gradient_home text-white">
       <div className="wel-navbar">
-        <h1 className=" text-4xl text-white" style={{ mystyle }}>
+        <h1 className="text-4xl text-white" style={mystyle}>
           OpenToWork
         </h1>
       </div>
       <div className="wel-flex">
         <h1
-          className=" text-5xl font-bold"
+          className="text-5xl font-bold"
           style={{ fontFamily: `'Dosis', 'sans-serif'` }}
         >
           Welcome Hustler!
         </h1>
         <h2
-          className=" text-4xl font-bold"
+          className="text-4xl font-bold"
           style={{ fontFamily: `'Dosis', 'sans-serif'` }}
         >
           Get Started!
@@ -52,13 +58,13 @@ export default function Welcome() {
         <div className="check_boxes">
           <div className="welcome_form">
             <input
-              on
               type="radio"
               name="buttontag"
               value="Apply as client"
               id="client"
               onChange={handleChange}
               checked={text.buttontag === "Apply as client"}
+              onClick={() => handleRadioButtonClick("Apply as client")}
             />
             <label htmlFor="client">
               <p className="wel-mx-auto">
@@ -71,12 +77,15 @@ export default function Welcome() {
               type="radio"
               name="buttontag"
               value="Apply as freelancer"
-              id="clien"
+              id="freelancer"
               onChange={handleChange}
               checked={text.buttontag === "Apply as freelancer"}
+              onClick={() => handleRadioButtonClick("Apply as freelancer")}
             />
-            <label htmlFor="clien">
-              <p className=" wel-mx-auto">I am freelancer, looking for work.</p>
+            <label htmlFor="freelancer">
+              <p className="wel-mx-auto">
+                I am a freelancer, looking for work.
+              </p>
             </label>
           </div>
         </div>

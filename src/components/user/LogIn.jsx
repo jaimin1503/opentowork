@@ -49,6 +49,7 @@ export default function LogIn() {
               className="w-full border rounded py-2 px-3"
               type="text"
               name="username"
+              autoComplete="current-username"
               value={formData.username}
               onChange={handleInputChange}
               required
@@ -65,6 +66,7 @@ export default function LogIn() {
               className="w-full border rounded py-2 px-3"
               type="password"
               name="password"
+              autoComplete="current-password"
               value={formData.password}
               onChange={handleInputChange}
               required
