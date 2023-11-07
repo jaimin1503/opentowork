@@ -19,29 +19,36 @@ export default function DevIT() {
       <Navbar />
 
       <div className="gradient_dev">
-        <Display
-          heading1="Best Designers and Creators for your business."
-          heading2="Find the best design that suits your work and personality."
-          url={interior}
-        />
-        <div className="row">
-          <div className="row3-photos">
-            <img src={photography} alt="img" />
+        <div className="display_area flex justify-center items-center py-5">
+          <Display
+            heading1="Best Designers and Creators for your business."
+            heading2="Find the best design that suits your work and personality."
+            url={interior}
+          />
+        </div>
+        <div className=" py-10">
+          <div className="py-5 flex justify-center items-center pb-5">
+            <img
+              className="h-[40vh] w-[50vw] object-cover m-5 rounded-xl"
+              src={photography}
+              alt="img"
+            />
             <h1 className=" text-white text-5xl font-bold mx-10">
               Photography
             </h1>
           </div>
-          <hr className="mb-5" />
-          <div className="row3-photos">
-            <h1>Video Editing</h1>
-            <video autoPlay muted controls>
+          <div className="py-5 flex justify-center items-center pb-5">
+            <h1 className=" text-white text-5xl font-bold mx-10">
+              Video Editing
+            </h1>
+            <video autoPlay muted controls className="h-[40vh] w-[50vw]">
               <source src={video} type="video/mp4" />
             </video>
           </div>
         </div>
         <div className="row3">
           <div className="text flex justify-center py-10">
-            <h1 className="text-white text-6xl font-extrabold my-5">
+            <h1 className="text-white text-5xl font-extrabold my-5">
               Design and creative projects for your most pressing work.
             </h1>
           </div>
