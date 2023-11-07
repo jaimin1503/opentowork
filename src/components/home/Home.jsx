@@ -47,13 +47,13 @@ export default function Home() {
     <>
       <div className="gradient_home">
         <Navbar />
-        <div className="row1">
-          <div className="info_home">
+        <div className="home_row1 flex items-center justify-between">
+          <div className="info_home pl-20">
             <h1
               ref={(el) => {
                 textAnimation = el;
               }}
-              className="gradient_text "
+              className="gradient_text ml-5 mt-3 font-bold text-5xl py-3"
             >
               Explore the sea of Talent,
             </h1>
@@ -61,7 +61,7 @@ export default function Home() {
               ref={(el) => {
                 textAnimation2 = el;
               }}
-              className="gradient_text "
+              className="gradient_text ml-5 mt-3 font-bold text-5xl"
             >
               Find the work that suits you.
             </h1>
@@ -73,16 +73,17 @@ export default function Home() {
               }}
               src={work_img}
               alt="work"
+              className=" w-[45vw]"
             />
           </div>
         </div>
-        <div className="row2">
+        <div className="row2 flex justify-center">
           <div>
             <div
               ref={(el) => {
                 listAnimation = el;
               }}
-              className="row2info flex items-center"
+              className="row2info flex flex-col items-start justify-center"
             >
               <span className=" symbol material-symbols-outlined mt-5">
                 select_check_box

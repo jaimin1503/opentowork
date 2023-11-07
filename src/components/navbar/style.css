@@ -135,3 +135,11 @@
 	}
 	
 }
+
+@media(max-width:520px){
+	.home_row1{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

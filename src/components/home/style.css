@@ -10,33 +10,6 @@
 	-webkit-text-fill-color: transparent;
 }
 
-.row1{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.info_home{
-	padding-left: 5rem;
-}
-.info_home h1{
-	margin-left: 2rem;
-	margin-top: 1rem;
-	font-weight: bold;
-	font-size: 3rem;
-}
-.home_img img{
-	width:45vw;
-}
-.row2{
-	display: flex;
-	justify-content: center;
-}
-.row2info{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-}
 .cata-row1{
 	display: flex;
 	justify-content: center;
