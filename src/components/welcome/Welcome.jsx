@@ -28,7 +28,7 @@ export default function Welcome() {
   }
 
   const mystyle = {
-    fontFamily: `'Lobster', cursive`,
+    fontFamily: `Lobster`,
   };
 
   function handleRadioButtonClick(value) {
@@ -38,7 +38,7 @@ export default function Welcome() {
   return (
     <div className="wel-text gradient_home text-white">
       <div className="wel-navbar">
-        <h1 className="text-4xl text-white" style={mystyle}>
+        <h1 className="text-4xl text-white font-extralight" style={mystyle}>
           OpenToWork
         </h1>
       </div>

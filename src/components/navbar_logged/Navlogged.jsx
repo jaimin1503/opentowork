@@ -1,15 +1,15 @@
 import logo from "./assets/586273b931349e0568ad89df.png";
-import profile from "./assets/account_circle_FILL0_wght400_GRAD0_opsz24.png";
-import saved from "./assets/favorite_FILL0_wght400_GRAD0_opsz24.png";
-import notification from "./assets/notifications_FILL0_wght400_GRAD0_opsz24.png";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
+import profile from "./assets/profile.svg";
 
 export default function Navlogged(props) {
   return (
     <div>
-      <div className="navbar flex justify-between">
+      <div className="gradient_home navbar flex justify-between">
         <div className="left_navbar w-[20%]">
-          <ul className=" list-none flex justify-around py-2 items-center">
+          <ul className=" list-none flex text-white justify-around py-2 items-center">
             <li className=" cursor-pointer logo w-8 h-8">
               <img src={logo} alt="logo" />
             </li>
@@ -32,16 +32,16 @@ export default function Navlogged(props) {
             <li className=" flex items-center">
               {" "}
               <input
-                className=" relative rounded-full border-2 p-1 pl-5 pr-8 "
+                className="gradient_home relative rounded-full border-2 border-purple-900 text-white p-1 pl-5 pr-8 "
                 placeholder="Search"
                 type="text"
               />
             </li>
             <li className=" cursor-pointer">
-              <img src={notification} alt="" />
+              <NotificationsIcon className=" text-white" />
             </li>
             <li className=" cursor-pointer">
-              <img src={saved} alt="" />
+              <FaHeart className=" text-white" />
             </li>
             <li className=" cursor-pointer">
               <img

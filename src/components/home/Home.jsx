@@ -83,7 +83,7 @@ export default function Home() {
               ref={(el) => {
                 listAnimation = el;
               }}
-              className="row2info flex flex-col items-start justify-center"
+              className="row2info flex items-start"
             >
               <span className=" symbol material-symbols-outlined mt-5">
                 select_check_box
