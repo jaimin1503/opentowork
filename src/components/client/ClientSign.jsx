@@ -94,7 +94,7 @@ export default function ClientSign() {
       <Navlogged />
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
-        <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+        <h2 className="text-2xl font-semibold mb-4 pl-[40%]">Sign Up</h2>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className=" mb-4">
             <label>First Name</label>
@@ -197,7 +197,7 @@ export default function ClientSign() {
           </div>
 
           <button
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 ml-[40%]"
             type="submit"
           >
             Sign Up

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../index.css";
+import "./client.css";
 import { useParams } from "react-router-dom";
 import Navlogged from "../navbar_logged/Navlogged";
 import default_pic from "./assets/default_profile_picture.jpg";
