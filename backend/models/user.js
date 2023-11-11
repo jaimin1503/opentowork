@@ -2,9 +2,18 @@ import mongoose from "mongoose";
 import passportLocalMongoose from "passport-local-mongoose";
 
 const userSchema = mongoose.Schema({
+  username: {
+    type: "string",
+    unique: true,
+    required: true,
+  },
   email: {
     type: "string",
     unique: true,
+    required: true,
+  },
+  password: {
+    type: "string",
     required: true,
   },
   first_name: {

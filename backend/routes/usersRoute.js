@@ -1,7 +1,6 @@
 import express from "express";
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
-import passport from "passport";
 
 const router = express.Router();
 
@@ -20,33 +19,21 @@ router.post("/", async (req, res) => {
         message: "please fill all the required details",
       });
     }
+    const hash = await bcrypt.hash(req.body.password, 10);
+    const newUser = {
+      username: req.body.username,
+      email: req.body.email,
+      password: hash,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      profile_picture: req.body.profile_picture,
+      description: req.body.description,
+      skills: req.body.skills,
+      location: req.body.location,
+      hourly_rate: req.body.hourly_rate,
+    };
 
-    const {
-      username,
-      email,
-      password,
-      first_name,
-      last_name,
-      profile_picture,
-      description,
-      skills,
-      location,
-      hourly_rate,
-    } = req.body;
-
-    const newUser = new User({
-      username,
-      email,
-      first_name,
-      last_name,
-      profile_picture,
-      description,
-      skills,
-      location,
-      hourly_rate,
-    });
-
-    const user = await User.register(newUser, password);
+    const user = await User.create(newUser);
     return res.status(201).send(user);
   } catch (error) {
     console.log(error.message);
