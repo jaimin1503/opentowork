@@ -12,6 +12,7 @@ import ChangeImage from "../changeImage/ChangeImage";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
+import ImageFlip from "../imageflip/ImageFlip";
 
 export default function DevIT() {
   return (
@@ -65,6 +66,7 @@ export default function DevIT() {
             url4={presentation}
             url5={house}
           />
+          <ImageFlip />
         </div>
         <div className="button flex justify-center py-10">
           <Link to="/Welcome">
