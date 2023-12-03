@@ -1,6 +1,7 @@
 import express from "express";
 import { Client } from "../models/client.js";
 import bcrypt from "bcrypt";
+import { createSecretToken } from "../SectetTocken.js";
 
 const router = express.Router();
 
@@ -29,6 +30,11 @@ router.post("/", async (req, res) => {
     };
 
     const client = await Client.create(newClient);
+    const token = createSecretToken(client._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
     return res.status(201).send(client);
   } catch (error) {
     console.log(error.message);
@@ -81,7 +87,11 @@ router.post("/login", async (req, res) => {
         message: "Invalid email or password. Please try again.",
       });
     }
-
+    const token = createSecretToken(user._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
     return res.status(200).send({
       message: "Login successful",
       client: client,

@@ -72,12 +72,17 @@ export default function ClientSign() {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:5555/clients", {
-        ...formData,
-        location: locationValue,
-        about: formData.about,
-        profile_picture: url,
-      })
+      .post(
+        "http://localhost:5555/clients",
+        {
+          ...formData,
+          location: locationValue,
+          about: formData.about,
+          profile_picture: url,
+        },
+        { withCredentials: true }
+      )
+
       .then(() => {
         setLoading(false);
         navigate("/Clientlog");
