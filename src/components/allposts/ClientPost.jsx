@@ -5,6 +5,8 @@ import { FaMapMarker } from "react-icons/fa";
 import Navlogged from "../navbar_logged/Navlogged";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import deleteicon from "./assets/delete.svg";
+// import editicon from "./assets/edit.svg";
 
 export default function ClientPost() {
   const [posts, setPosts] = useState([]);
@@ -33,10 +35,43 @@ export default function ClientPost() {
           {posts.map((post) => {
             return (
               <div key={post._id}>
-                <div className=" cursor-pointer max-w-[60vw] min-h-[35vh] border-2 rounded-xl border-purple-300 m-auto mt-5 hover:bg-purple-50">
+                <div className=" max-w-[60vw] min-h-[35vh] border-2 rounded-xl border-purple-300 m-auto mt-5 hover:bg-purple-50">
                   <div className="row1_post flex justify-between">
                     <div className=" p-5 text-xl font-bold tracking-wider">
                       -{post.title}
+                      <svg
+                        className=" mx-2 inline cursor-pointer"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19.5 5.5L18.5 22H5.5L4.5 5.5"
+                          stroke="#9333ea"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2 5.5H8M22 5.5H16M16 5.5L14.5 2H9.5L8 5.5M16 5.5H8"
+                          stroke="#9333ea"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9.5 16.5L9.5 10.5"
+                          stroke="#9333ea"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.5 16.5L14.5 10.5"
+                          stroke="#9333ea"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                     <div>
                       <Link to={`/post/${post._id}`}>
