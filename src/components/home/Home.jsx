@@ -5,97 +5,37 @@ import it from "./assets/IT.png";
 import business from "./assets/business.png";
 import design from "./assets/design.png";
 import worker from "./assets/worker.jpg";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  let textAnimation = useRef(null);
-  let textAnimation2 = useRef(null);
-  let imgAnimation = useRef(null);
-  let listAnimation = useRef(null);
-  let listAnimation2 = useRef(null);
-  let listAnimation3 = useRef(null);
-
-  useEffect(() => {
-    gsap.from(
-      [
-        textAnimation,
-        textAnimation2,
-        listAnimation,
-        listAnimation2,
-        listAnimation3,
-      ],
-      {
-        x: -100,
-        opacity: 0,
-        delay: 0.2,
-        duration: 0.5,
-        stagger: 0.2,
-      }
-    );
-    gsap.from([imgAnimation], {
-      x: 100,
-      opacity: 0,
-      delay: 0.2,
-      duration: 0.8,
-    });
-  }, []);
   return (
     <>
       <div className="gradient_home">
         <Navbar />
         <div className="home_row1 flex items-center justify-between">
           <div className="info_home pl-20">
-            <h1
-              ref={(el) => {
-                textAnimation = el;
-              }}
-              className="gradient_text ml-5 mt-3 font-bold text-5xl py-3"
-            >
+            <h1 className="gradient_text ml-5 mt-3 font-bold text-5xl py-3">
               Explore the sea of Talent,
             </h1>
-            <h1
-              ref={(el) => {
-                textAnimation2 = el;
-              }}
-              className="gradient_text ml-5 mt-3 font-bold text-5xl"
-            >
+            <h1 className="gradient_text ml-5 mt-3 font-bold text-5xl">
               Find the work that suits you.
             </h1>
           </div>
           <div className="home_img">
-            <img
-              ref={(el) => {
-                imgAnimation = el;
-              }}
-              src={work_img}
-              alt="work"
-              className=" w-[45vw]"
-            />
+            <img src={work_img} alt="work" className=" w-[45vw]" />
           </div>
         </div>
         <div className="row2 flex justify-center">
           <div>
-            <div
-              ref={(el) => {
-                listAnimation = el;
-              }}
-              className="row2info flex items-start"
-            >
+            <div className="row2info flex items-start">
               <span className=" symbol material-symbols-outlined mt-5">
                 select_check_box
               </span>
               <h1 className=" text-white text-3xl mt-5">No cost to join</h1>
             </div>
-            <div
-              ref={(el) => {
-                listAnimation2 = el;
-              }}
-              className="row2info flex items-center"
-            >
+            <div className="row2info flex items-center">
               <span className=" symbol material-symbols-outlined mt-5">
                 push_pin
               </span>
@@ -103,12 +43,7 @@ export default function Home() {
                 Post a job and hire top talent
               </h1>
             </div>
-            <div
-              ref={(el) => {
-                listAnimation3 = el;
-              }}
-              className="row2info flex items-center"
-            >
+            <div className="row2info flex items-center">
               <span className=" symbol material-symbols-outlined mt-5 ">
                 stars
               </span>
