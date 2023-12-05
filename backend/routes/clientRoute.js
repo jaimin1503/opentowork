@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
         message: "Invalid email or password. Please try again.",
       });
     }
-    const token = createSecretToken(user._id);
+    const token = createSecretToken(client._id);
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
