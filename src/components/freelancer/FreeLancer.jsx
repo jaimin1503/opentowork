@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../../index.css";
 import { useParams } from "react-router-dom";
-import Navlogged from "../navbar_logged/Navlogged";
 import default_pic from "./assets/default_profile_picture.jpg";
 import Spinner from "../Spinner";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaMapMarker } from "react-icons/fa";
+import NavUser from "../navbar_user/NavUser";
 
 export default function FreeLancer() {
   const [user, setUser] = useState({});
@@ -36,7 +36,7 @@ export default function FreeLancer() {
 
   return (
     <div>
-      <Navlogged profilepic={user.profile_picture} />
+      {/* <NavUser /> */}
       {loading ? (
         <Spinner />
       ) : (

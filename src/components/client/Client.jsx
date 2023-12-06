@@ -36,10 +36,7 @@ export default function Client() {
 
   return (
     <div>
-      <Navlogged
-        profilepic={client.profile_picture}
-        myjobs={`/Client/${client._id}/posts`}
-      />
+      <Navlogged myjobs={`/Client/${client._id}/posts`} />
       {loading ? (
         <Spinner />
       ) : (

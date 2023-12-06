@@ -1,10 +1,9 @@
 import express from "express";
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
+import { createSecretToken } from "../SectetTocken.js";
 
 const router = express.Router();
-
-// const cpUpload = upload.fields([{ name: "profile_picture", maxCount: 1 }]);
 
 router.post("/", async (req, res) => {
   try {
@@ -34,6 +33,11 @@ router.post("/", async (req, res) => {
     };
 
     const user = await User.create(newUser);
+    const token = createSecretToken(user._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
     return res.status(201).send(user);
   } catch (error) {
     console.log(error.message);
@@ -86,6 +90,12 @@ router.post("/login", async (req, res) => {
         message: "Invalid Username or password. Please try again.",
       });
     }
+
+    const token = createSecretToken(user._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
 
     return res.status(200).send({
       message: "Login successful",

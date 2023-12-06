@@ -11,7 +11,8 @@ import { User } from "./models/user.js";
 import clientRoute from "./routes/clientRoute.js";
 import { Post } from "./models/post.js";
 import { Client } from "./models/client.js";
-import { userVerification } from "./middlewares/AuthMiddleware.js";
+import { clientVerification } from "./middlewares/AuthMiddleware.js";
+import { userVerification } from "./middlewares/AuthFreelancer.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -41,7 +42,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.post("/", userVerification);
+app.post("/", clientVerification);
+app.get("/", userVerification);
 
 app.use("/posts", postsRoute);
 app.use("/users", usersRoute);

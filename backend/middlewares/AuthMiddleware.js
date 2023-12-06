@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"; // Change from 'pkg' to 'jsonwebtoken'
 import dotenv from "dotenv";
 dotenv.config();
 
-export const userVerification = (req, res) => {
+export const clientVerification = (req, res) => {
   const token = req.cookies.token;
   if (!token) {
     return res.json({ status: false });
