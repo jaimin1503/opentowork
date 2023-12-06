@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import countryList from "react-select-country-list";
-import Navlogged from "../navbar_logged/Navlogged";
+// import Navlogged from "../navbar_logged/Navlogged";
 import Spinner from "../Spinner";
 
 export default function ClientSign() {
@@ -96,7 +96,7 @@ export default function ClientSign() {
 
   return (
     <div>
-      <Navlogged />
+      {/* <Navlogged /> */}
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
         <h2 className="text-2xl font-semibold mb-4 pl-[40%]">Sign Up</h2>

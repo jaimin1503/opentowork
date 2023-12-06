@@ -4,7 +4,13 @@ import Welcome from "./components/welcome/Welcome";
 import { Routes, Route } from "react-router-dom";
 import Design from "./components/design/Design";
 import { Client, ClientLog, ClientSign } from "./components/client";
-import { AllPosts, ClientPost, EditPost, NewPost } from "./components/allposts";
+import {
+  AllPosts,
+  ClientPost,
+  EditPost,
+  NewPost,
+  DeletePost,
+} from "./components/allposts";
 import {
   FreeLancer,
   EditProfile,
@@ -31,6 +37,7 @@ function App() {
         <Route path="/Client/:id" element={<Client />}></Route>
         <Route path="/Client/:id/posts" element={<ClientPost />}></Route>
         <Route path="/post/:id" element={<EditPost />}></Route>
+        <Route path="/deletepost/:id" element={<DeletePost />}></Route>
       </Routes>
     </div>
   );

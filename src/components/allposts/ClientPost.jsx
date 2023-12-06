@@ -40,39 +40,41 @@ export default function ClientPost() {
                   <div className="row1_post flex justify-between">
                     <div className=" p-5 text-xl font-bold tracking-wider">
                       -{post.title}
-                      <svg
-                        className=" mx-2 inline cursor-pointer"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M19.5 5.5L18.5 22H5.5L4.5 5.5"
-                          stroke="#9333ea"
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M2 5.5H8M22 5.5H16M16 5.5L14.5 2H9.5L8 5.5M16 5.5H8"
-                          stroke="#9333ea"
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9.5 16.5L9.5 10.5"
-                          stroke="#9333ea"
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M14.5 16.5L14.5 10.5"
-                          stroke="#9333ea"
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
+                      <Link to={`/deletepost/${post._id}`}>
+                        <svg
+                          className=" mx-2 inline cursor-pointer"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.5 5.5L18.5 22H5.5L4.5 5.5"
+                            stroke="#9333ea"
+                            stroke-width="1.5"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M2 5.5H8M22 5.5H16M16 5.5L14.5 2H9.5L8 5.5M16 5.5H8"
+                            stroke="#9333ea"
+                            stroke-width="1.5"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9.5 16.5L9.5 10.5"
+                            stroke="#9333ea"
+                            stroke-width="1.5"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M14.5 16.5L14.5 10.5"
+                            stroke="#9333ea"
+                            stroke-width="1.5"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </Link>
                     </div>
                     <div>
                       <Link to={`/post/${post._id}`}>
