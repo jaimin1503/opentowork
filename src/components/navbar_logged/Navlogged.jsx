@@ -3,8 +3,34 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import profile from "./assets/profile.svg";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import axios from "axios";
 
 export default function Navlogged(props) {
+  const navigate = useNavigate();
+  const [cookies, removeCookie] = useCookies([]);
+  const [client, setClient] = useState({});
+
+  useEffect(() => {
+    const verifyCookie = async () => {
+      if (!cookies.token) {
+        navigate("/login");
+      }
+      axios
+        .post("http://localhost:5555", {}, { withCredentials: true })
+        .then((res) => {
+          setClient(res.data.client);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // console.log(data.client.first_name);
+    };
+    verifyCookie();
+  }, [cookies, navigate, removeCookie]);
   return (
     <div>
       <div className="gradient_home navbar flex justify-between">
@@ -46,7 +72,7 @@ export default function Navlogged(props) {
             <li className=" cursor-pointer">
               <img
                 className="w-8 h-8 object-cover rounded-full"
-                src={!props.profilepic ? profile : props.profilepic}
+                src={client.profile_picture || profile}
                 alt="profilepic"
               />
             </li>

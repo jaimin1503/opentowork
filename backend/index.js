@@ -11,9 +11,12 @@ import { User } from "./models/user.js";
 import clientRoute from "./routes/clientRoute.js";
 import { Post } from "./models/post.js";
 import { Client } from "./models/client.js";
+import { userVerification } from "./middlewares/AuthMiddleware.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.use(
   cors({
@@ -38,9 +41,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+app.post("/", userVerification);
 
 app.use("/posts", postsRoute);
 app.use("/users", usersRoute);
