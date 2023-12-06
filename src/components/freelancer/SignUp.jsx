@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select1 from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
-import Navlogged from "../navbar_logged/Navlogged";
+// import Navlogged from "../navbar_logged/Navlogged";
 import Spinner from "../Spinner";
 
 const ITEM_HEIGHT = 48;
@@ -125,14 +125,18 @@ export default function SignUp() {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:5555/users", {
-        ...formData,
-        location: locationValue,
-        skills: personName,
-        description: formData.description,
-        hourly_rate: formData.hourly_rate,
-        profile_picture: url,
-      })
+      .post(
+        "http://localhost:5555/users",
+        {
+          ...formData,
+          location: locationValue,
+          skills: personName,
+          description: formData.description,
+          hourly_rate: formData.hourly_rate,
+          profile_picture: url,
+        },
+        { withCredentials: true }
+      )
       .then(() => {
         setLoading(false);
         navigate("/Login");
@@ -146,7 +150,7 @@ export default function SignUp() {
 
   return (
     <div>
-      <Navlogged />
+      {/* <Navlogged /> */}
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>

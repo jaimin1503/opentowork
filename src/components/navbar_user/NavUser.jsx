@@ -19,7 +19,7 @@ export default function Navlogged(props) {
         navigate("/login");
       }
       axios
-        .get("http://localhost:5555", {}, { withCredentials: true })
+        .post("http://localhost:5555/log", {}, { withCredentials: true })
         .then((res) => {
           setUser(res.data.user);
         })

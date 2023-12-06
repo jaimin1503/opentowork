@@ -42,9 +42,9 @@ export default function Navlogged(props) {
             <li className="mr-4 group relative cursor-pointer">
               Services
               <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-purple-800 py-2 px-8 space-y-1">
-                <Link to="/AllPosts">
+                {/* <Link to="/AllPosts">
                   <li className=" text-sm py-1 text-white">Browse Jobs</li>
-                </Link>
+                </Link> */}
                 <Link to={props.myjobs}>
                   <li className=" text-sm py-1 text-white">My Jobs</li>
                 </Link>

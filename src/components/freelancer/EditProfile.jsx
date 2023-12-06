@@ -11,9 +11,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select1 from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
-import Navlogged from "../navbar_logged/Navlogged";
 import Spinner from "../Spinner";
 import { useParams } from "react-router-dom";
+import NavUser from "../navbar_user/NavUser";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -86,7 +86,7 @@ export default function EditProfile() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/users/${id}`)
+        .get(`http://localhost:5555/users/${id}`, { withCredentials: true })
         .then((res) => {
           setUser(res.data.data);
           setLoading(false);
@@ -172,7 +172,7 @@ export default function EditProfile() {
 
   return (
     <div>
-      <Navlogged />
+      <NavUser />
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
         <h2 className="text-2xl font-semibold mb-4">Edit Profile</h2>

@@ -17,7 +17,9 @@ export default function LogIn() {
     setError(""); // Clear any previous errors
 
     axios
-      .post("http://localhost:5555/users/login", formData) // Use POST for sending login data
+      .post("http://localhost:5555/users/login", formData, {
+        withCredentials: true,
+      }) // Use POST for sending login data
       .then((response) => {
         const user = response.data.user;
         navigate(`/FreeLancer/${user._id}`);

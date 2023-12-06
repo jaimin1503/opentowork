@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../Spinner";
 import { FaMapMarker } from "react-icons/fa";
-import Navlogged from "../navbar_logged/Navlogged";
+// import NavUser from "../navbar_user/NavUser";
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -37,7 +37,7 @@ export default function AllPosts() {
 
   return (
     <div>
-      <Navlogged />
+      {/* <NavUser /> */}
       {loading ? (
         <Spinner />
       ) : (

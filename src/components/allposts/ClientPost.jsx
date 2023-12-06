@@ -25,6 +25,7 @@ export default function ClientPost() {
         setLoading(false);
       });
   }, [id]);
+
   return (
     <div>
       <Navlogged />

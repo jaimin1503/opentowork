@@ -36,7 +36,7 @@ export default function FreeLancer() {
 
   return (
     <div>
-      {/* <NavUser /> */}
+      <NavUser />
       {loading ? (
         <Spinner />
       ) : (

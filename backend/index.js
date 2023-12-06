@@ -43,7 +43,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.post("/", clientVerification);
-app.get("/", userVerification);
+app.post("/log", userVerification);
 
 app.use("/posts", postsRoute);
 app.use("/users", usersRoute);
