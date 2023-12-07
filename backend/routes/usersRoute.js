@@ -107,6 +107,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/logout", (req, res) => {
+  res.send("Logout Successfully");
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
