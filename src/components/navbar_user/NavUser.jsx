@@ -57,16 +57,8 @@ export default function Navlogged(props) {
             <li className=" cursor-pointer">Talent</li>
           </ul>
         </div>
-        <div className="right_navbar w-[40%]">
+        <div className="right_navbar w-1/5">
           <ul className="flex justify-around list-none  items-center py-2 ">
-            <li className=" flex items-center">
-              {" "}
-              <input
-                className="gradient_home relative rounded-full border-2 border-purple-900 text-white p-1 pl-5 pr-8 "
-                placeholder="Search"
-                type="text"
-              />
-            </li>
             <li className=" cursor-pointer">
               <NotificationsIcon className=" text-white" />
             </li>
@@ -74,12 +66,20 @@ export default function Navlogged(props) {
               <FaHeart className=" text-white" />
             </li>
             <li className="group cursor-pointer">
-              <img
-                className="w-8 h-8 object-cover rounded-full"
-                src={user.profile_picture ? user.profile_picture : profile}
-                alt="profilepic"
-              />
-              <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-purple-800 py-2 px-8 space-y-1">
+              {cookies.token ? (
+                <img
+                  className="w-8 h-8 object-cover rounded-full"
+                  src={user.profile_picture ? user.profile_picture : profile}
+                  alt="profilepic"
+                />
+              ) : (
+                <img
+                  className="w-8 h-8 object-cover rounded-full"
+                  src={profile}
+                  alt="profilepic"
+                />
+              )}
+              <ul className="absolute hidden rounded-lg right-0 group-hover:block bg-purple-800 mr-10 py-2 px-8 space-y-1">
                 <li onClick={Logout} className=" text-sm py-1 text-white">
                   Logout
                 </li>
