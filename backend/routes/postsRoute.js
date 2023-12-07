@@ -1,5 +1,7 @@
 import express from "express";
 import { Post } from "../models/post.js";
+import { clientVerification } from "../middlewares/AuthMiddleware.js";
+import { userVerification } from "../middlewares/AuthFreelancer.js";
 
 const router = express.Router();
 

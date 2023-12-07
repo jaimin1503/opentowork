@@ -31,26 +31,10 @@ export default function Navlogged(props) {
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
-  const handleLogout = async () => {
-    try {
-      const response = await fetch("/logout", {
-        method: "GET",
-        credentials: "include",
-      });
-
-      if (response.ok) {
-        // Clear JWT token from local storage
-        removeCookie("token");
-        // Redirect to login or homepage
-        navigate("/Login");
-      } else {
-        console.error("Logout failed");
-      }
-    } catch (error) {
-      console.error("Error during logout:", error);
-    }
+  const Logout = () => {
+    removeCookie("token");
+    navigate("/");
   };
-
   return (
     <div>
       <div className="gradient_home navbar flex justify-between">
@@ -92,11 +76,11 @@ export default function Navlogged(props) {
             <li className="group cursor-pointer">
               <img
                 className="w-8 h-8 object-cover rounded-full"
-                src={user.profile_picture || profile}
+                src={user.profile_picture ? user.profile_picture : profile}
                 alt="profilepic"
               />
               <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-purple-800 py-2 px-8 space-y-1">
-                <li onClick={handleLogout} className=" text-sm py-1 text-white">
+                <li onClick={Logout} className=" text-sm py-1 text-white">
                   Logout
                 </li>
               </ul>
