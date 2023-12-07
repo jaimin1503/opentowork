@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../Spinner";
 import { FaMapMarker } from "react-icons/fa";
-import "../../config";
+
 // import NavUser from "../navbar_user/NavUser";
 
 export default function AllPosts() {
