@@ -49,9 +49,9 @@ export default function Navlogged(props) {
                 <Link to="/AllPosts">
                   <li className=" text-sm py-1 text-white">Browse Jobs</li>
                 </Link>
-                <Link to={props.myjobs}>
+                {/* <Link to={props.myjobs}>
                   <li className=" text-sm py-1 text-white">My Jobs</li>
-                </Link>
+                </Link> */}
               </ul>
             </li>
             <li className=" cursor-pointer">Talent</li>

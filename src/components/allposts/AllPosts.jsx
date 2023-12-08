@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../Spinner";
 import { FaMapMarker } from "react-icons/fa";
-
-// import NavUser from "../navbar_user/NavUser";
+import NavUser from "../navbar_user/NavUser";
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -38,7 +37,7 @@ export default function AllPosts() {
 
   return (
     <div>
-      {/* <NavUser /> */}
+      <NavUser />
       {loading ? (
         <Spinner />
       ) : (
@@ -66,7 +65,7 @@ export default function AllPosts() {
                     <div className="budget">
                       Est. Budget Rs. {post.budget}
                       <p className="deadline text-xs text-gray-400">
-                        -posted on {post.deadline.substring(0, 10)}
+                        -posted on {post.createdDate.substring(0, 10)}
                       </p>
                     </div>
                   </div>
