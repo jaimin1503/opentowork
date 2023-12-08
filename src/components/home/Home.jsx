@@ -96,17 +96,17 @@ export default function Home() {
                 Work with huge network of individual professionals.From quick
                 fixes to lasting solutions.
               </h2>
-              <div className="find">
+              <div className="find bg-purple-600 hover:bg-purple-700 hover:text-purple-100">
                 <Link to="/Welcome">
-                  <h3 className=" text-white text-xl p-2">
+                  <h3 className=" text-white text-lg p-2">
                     Your Project, Our Expertise.
                     <p>&rarr;</p>
                   </h3>
                 </Link>
               </div>
-              <div className="find">
+              <div className="find bg-purple-600 hover:bg-purple-700 hover:text-purple-100">
                 <Link to="/Welcome">
-                  <h3 className=" text-white text-xl p-2">
+                  <h3 className=" text-white text-lg p-2">
                     Quality Freelancers, Quality Work.
                     <p>&rarr;</p>
                   </h3>

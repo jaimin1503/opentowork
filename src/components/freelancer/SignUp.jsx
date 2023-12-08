@@ -153,15 +153,15 @@ export default function SignUp() {
       {/* <Navlogged /> */}
       {loading ? <Spinner /> : ""}
       <div className="w-full max-w-md mx-auto my-5">
-        <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Sign up to find work you love
+        </h2>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className=" mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Username
-            </label>
             <input
               type="text"
               name="username"
+              placeholder="Username"
               value={formData.username}
               onChange={handleInputChange}
               required
@@ -170,11 +170,11 @@ export default function SignUp() {
           </div>
 
           <div className=" mb-4">
-            <label>Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
+              placeholder="Email"
               onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
@@ -182,11 +182,12 @@ export default function SignUp() {
           </div>
 
           <div className=" mb-4">
-            <label>Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
+              minLength={8}
+              placeholder="Password (8 or more Characters"
               onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
@@ -194,10 +195,10 @@ export default function SignUp() {
           </div>
 
           <div className=" mb-4">
-            <label>First Name</label>
             <input
               type="text"
               name="first_name"
+              placeholder="First name"
               value={formData.first_name}
               onChange={handleInputChange}
               required
@@ -206,10 +207,10 @@ export default function SignUp() {
           </div>
 
           <div className=" mb-4">
-            <label>Last Name</label>
             <input
               type="text"
               name="last_name"
+              placeholder="Last name"
               value={formData.last_name}
               onChange={handleInputChange}
               required
@@ -287,10 +288,10 @@ export default function SignUp() {
           </div>
 
           <div className=" mb-4">
-            <label>Hourly Rate</label>
             <input
               type="number"
               name="hourly_rate"
+              placeholder="Hourly rate"
               value={formData.hourly_rate}
               onChange={handleInputChange}
               required
@@ -298,12 +299,14 @@ export default function SignUp() {
             />
           </div>
 
-          <button
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
-            type="submit"
-          >
-            Sign Up
-          </button>
+          <div className=" flex justify-center items-center">
+            <button
+              className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-400"
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
         </form>
       </div>
     </div>

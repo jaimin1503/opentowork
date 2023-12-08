@@ -47,13 +47,13 @@ export default function Welcome() {
           className="text-5xl font-bold"
           style={{ fontFamily: `'Dosis', 'sans-serif'` }}
         >
-          Welcome Hustler!
+          Welcome User 👋
         </h1>
         <h2
           className="text-4xl font-bold"
           style={{ fontFamily: `'Dosis', 'sans-serif'` }}
         >
-          Get Started!
+          Get Started! 🚀
         </h2>
         <div className="check_boxes">
           <div className="welcome_form">
@@ -96,7 +96,7 @@ export default function Welcome() {
             </button>
           </Link>
           <p className="well-mt-5">
-            Already have an account{" "}
+            Already have an account?{" "}
             <Link className="wel-text-purple-600" to={login}>
               Log in
             </Link>

@@ -25,27 +25,36 @@ export default function Navbar() {
       <div className={`navbar ${isOpen ? "h_nav_resp" : ""} gradient_home`}>
         <div className="left_side">
           <ul className={`ula ${!visible ? "v_nav_resp" : ""}`}>
-            <Link to="/" className=" li">
+            <Link to="/" className=" li hover:text-purple-500">
               <img className="logo" src={logo} alt="sdfg" />
             </Link>
-            <Link to="/DevIT" className=" li">
+            <Link to="/DevIT" className=" li hover:text-purple-500">
               Development & IT
             </Link>
-            <Link to="/Design" className=" li">
+            <Link to="/Design" className=" li hover:text-purple-500">
               Design & Creation
             </Link>
           </ul>
         </div>
         <div className={`right_side ${!visible ? "v_nav_resp" : ""}`}>
           <div className="log_in">
-            <Link to="/Login">
-              <p className=" text-white cursor-pointer px-5 hover:text-purple-200">
-                log in
-              </p>
-            </Link>
+            <li className=" text-white group cursor-pointer list-none px-5 hover:text-purple-500">
+              log in
+              <ul className=" absolute hidden rounded-lg group-hover:block bg-purple-800 py-2 px-8 space-y-1">
+                <Link to="/Login">
+                  <li className=" text-sm py-1 text-white">FreeLancer</li>
+                </Link>
+                <Link to="/ClientLog">
+                  <li className=" text-sm py-1 text-white">Client</li>
+                </Link>
+              </ul>
+            </li>
           </div>
           <div className="up">
-            <button className="sign_up" onClick={signuphandler}>
+            <button
+              className=" py-2 px-5 rounded-full bg-purple-600 text-white hover:bg-purple-700 hover:text-purple-100"
+              onClick={signuphandler}
+            >
               Sign up
             </button>
           </div>
