@@ -1,7 +1,6 @@
 import express from "express";
 import session from "express-session";
 import passport from "passport";
-import { PORT, mongoURL } from "./config.js";
 import mongoose from "mongoose";
 import postsRoute from "./routes/postsRoute.js";
 import usersRoute from "./routes/usersRoute.js";
@@ -90,10 +89,10 @@ app.post("/clients/:id/posts", async (req, res) => {
 });
 
 mongoose
-  .connect(mongoURL)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("connected to database");
-    app.listen(PORT, () => {
+    app.listen(5555, () => {
       console.log("listning on port 5555");
     });
   })
