@@ -1,7 +1,0 @@
-.flip_img img:hover{
-	transform: rotateX(180deg);
-	cursor: pointer;
-}
-.flip_img img{
-	transition: 0.8s;
-}
