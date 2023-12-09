@@ -141,6 +141,10 @@ router.put("/:id", async (req, res) => {
         message: "please fill all the required details",
       });
     }
+    if (req.body.password) {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      req.body.password = hashedPassword; // Replace plaintext password with hashed password
+    }
     const { id } = req.params;
 
     // const bpwd = await bcrypt.hash(req.body.password, 10);

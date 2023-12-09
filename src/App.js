@@ -3,7 +3,12 @@ import Home from "./components/home/Home";
 import Welcome from "./components/welcome/Welcome";
 import { Routes, Route } from "react-router-dom";
 import Design from "./components/design/Design";
-import { Client, ClientLog, ClientSign } from "./components/client";
+import {
+  Client,
+  ClientLog,
+  ClientSign,
+  EditClientProfile,
+} from "./components/client";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {
   AllPosts,
@@ -34,6 +39,10 @@ function App() {
         <Route
           path="/FreeLancer/:id"
           element={<ProtectedRoute Component={FreeLancer} />}
+        ></Route>
+        <Route
+          path="/Client/edit/:id"
+          element={<ProtectedRoute Component={EditClientProfile} />}
         ></Route>
         <Route
           path="/FreeLancer/edit/:id"
