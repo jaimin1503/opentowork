@@ -85,7 +85,7 @@ export default function LogIn() {
               </div>
               <div className="text-center">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                  className="bg-purple-600 hover:bg-purple-700 hover:text-purple-100 text-white font-bold py-2 px-4 rounded-full"
                   type="submit"
                 >
                   Log In

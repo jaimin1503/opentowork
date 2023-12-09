@@ -141,115 +141,128 @@ function EditPost() {
   };
 
   return (
-    <div>
+    <div className="gradient_home">
       <Navlogged />
-      {loading ? <Spinner /> : ""}
-      <div className="max-w-md mx-auto p-6 bg-white rounded shadow mt-16">
-        <h2 className="text-2xl font-bold mb-4">Edit Post</h2>
-        <form onSubmit={handleFormSubmit}>
-          <div className="mb-4">
-            <label className="block text-sm font-bold">Title:</label>
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleInputChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            />
-          </div>
+      <div className=" h-full w-full flex justify-center items-center py-10">
+        {loading ? <Spinner /> : ""}
+        <div className=" flex justify-center items-center pt-5 bg-purple-100 sm:w-[90vw] lg:w-[50vw] border-2 rounded-xl border-purple-600">
+          <div className="w-full max-w-md mx-auto my-5">
+            <div className=" flex justify-center items-center">
+              <h2 className="text-2xl font-bold mb-4">Edit Post</h2>
+            </div>
+            <form onSubmit={handleFormSubmit}>
+              <div className="mb-4">
+                <label className="block text-sm font-bold">Title:</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full border border-purple-300 rounded px-3 py-2"
+                />
+              </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-bold">Description:</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            />
-          </div>
+              <div className="mb-4">
+                <label className="block text-sm font-bold">Description:</label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  rows={6}
+                  required
+                  className="w-full border border-purple-300 rounded px-3 py-2"
+                />
+              </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-bold">Category:</label>
-            <input
-              type="text"
-              name="category"
-              value={formData.category}
-              onChange={handleInputChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            />
-          </div>
+              <div className="mb-4">
+                <label className="block text-sm font-bold">Category:</label>
+                <input
+                  type="text"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full border border-purple-300 rounded px-3 py-2"
+                />
+              </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-bold">Budget:</label>
-            <input
-              type="number"
-              name="budget"
-              value={formData.budget}
-              onChange={handleInputChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            />
-          </div>
-          <FormControl sx={{ m: 1, width: 300 }}>
-            <InputLabel id="demo-multiple-chip-label">Skills</InputLabel>
-            <Select1
-              labelId="demo-multiple-chip-label"
-              id="demo-multiple-chip"
-              multiple
-              value={personName}
-              onChange={handleChange}
-              input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-              renderValue={(selected) => (
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                  {selected.map((value) => (
-                    <Chip key={value} label={value} />
-                  ))}
-                </Box>
-              )}
-              MenuProps={MenuProps}
-            >
-              {names.map((name) => (
-                <MenuItem
-                  key={name}
-                  value={name}
-                  style={getStyles(name, personName, theme)}
+              <div className="mb-4">
+                <label className="block text-sm font-bold">Budget:</label>
+                <input
+                  type="number"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full border border-purple-300 rounded px-3 py-2"
+                />
+              </div>
+              <FormControl sx={{ m: 1, width: 300 }}>
+                <InputLabel id="demo-multiple-chip-label">Skills</InputLabel>
+                <Select1
+                  labelId="demo-multiple-chip-label"
+                  id="demo-multiple-chip"
+                  multiple
+                  value={personName}
+                  onChange={handleChange}
+                  input={
+                    <OutlinedInput id="select-multiple-chip" label="Chip" />
+                  }
+                  renderValue={(selected) => (
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                      {selected.map((value) => (
+                        <Chip key={value} label={value} />
+                      ))}
+                    </Box>
+                  )}
+                  MenuProps={MenuProps}
                 >
-                  {name}
-                </MenuItem>
-              ))}
-            </Select1>
-          </FormControl>
+                  {names.map((name) => (
+                    <MenuItem
+                      key={name}
+                      value={name}
+                      style={getStyles(name, personName, theme)}
+                    >
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select1>
+              </FormControl>
 
-          <div className="mb-4">
-            <label className="block text-sm font-bold pt-4">Deadline:</label>
-            <input
-              type="date"
-              name="deadline"
-              value={formData.deadline}
-              onChange={handleInputChange}
-              required
-              className="w-full border rounded px-3 py-2"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="">Location:</label>
-            <Select
-              options={options}
-              value={location}
-              onChange={changeHandler}
-            />
-          </div>
+              <div className="mb-4">
+                <label className="block text-sm font-bold pt-4">
+                  Deadline:
+                </label>
+                <input
+                  type="date"
+                  name="deadline"
+                  value={formData.deadline}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full border border-purple-300 rounded px-3 py-2"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="">Location:</label>
+                <Select
+                  options={options}
+                  value={location}
+                  onChange={changeHandler}
+                />
+              </div>
 
-          <button
-            type="submit"
-            className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-          >
-            Update Post
-          </button>
-        </form>
+              <div className=" flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-purple-600 text-white font-bold py-2 px-4 rounded-full hover:bg-purple-700 hover:text-purple-100"
+                >
+                  Update Post
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

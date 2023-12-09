@@ -10,7 +10,7 @@ export default function ChangeImage(props) {
   }, [images.length]);
 
   useEffect(() => {
-    const intervalId = setInterval(changeImage, 2000);
+    const intervalId = setInterval(changeImage, 3000);
     return () => clearInterval(intervalId);
   }, [changeImage]);
 
