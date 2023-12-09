@@ -138,22 +138,39 @@ router.put("/:id", async (req, res) => {
       !req.body.hourly_rate
     ) {
       return res.status(400).send({
-        message: "please fill all the required details",
+        message: "Please fill all the required details",
       });
     }
-    if (req.body.password) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10);
-      req.body.password = hashedPassword; // Replace plaintext password with hashed password
-    }
+
     const { id } = req.params;
+    const existingUser = await User.findById(id);
 
-    // const bpwd = await bcrypt.hash(req.body.password, 10);
-
-    const result = await User.findByIdAndUpdate(id, req.body);
-
-    if (!result) {
+    if (!existingUser) {
       return res.status(404).json({ message: "User Not Found" });
     }
+
+    // Hash password if updated
+    if (req.body.password) {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      req.body.password = hashedPassword;
+    }
+
+    // Update profile picture only if a new URL is provided
+    if (req.body.profile_picture) {
+      existingUser.profile_picture = req.body.profile_picture;
+    }
+
+    // Update other details
+    existingUser.username = req.body.username;
+    existingUser.email = req.body.email;
+    existingUser.first_name = req.body.first_name;
+    existingUser.last_name = req.body.last_name;
+    existingUser.description = req.body.description;
+    existingUser.location = req.body.location;
+    existingUser.skills = req.body.skills;
+    existingUser.hourly_rate = req.body.hourly_rate;
+
+    await existingUser.save();
 
     return res.status(200).send({ message: "User Updated successfully" });
   } catch (error) {

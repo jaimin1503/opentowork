@@ -207,7 +207,7 @@ export default function EditClientProfile() {
               <div className=" mb-4">
                 <label>About your Organization</label>
                 <textarea
-                  name="description"
+                  name="about"
                   value={formData.about}
                   rows={5}
                   onChange={handleInputChange}

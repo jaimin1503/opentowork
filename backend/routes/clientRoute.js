@@ -129,20 +129,38 @@ router.put("/:id", async (req, res) => {
       !req.body.last_name
     ) {
       return res.status(400).send({
-        message: "please fill all the required details",
+        message: "Please fill all the required details",
       });
     }
-    if (req.body.password) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10);
-      req.body.password = hashedPassword; // Replace plaintext password with hashed password
-    }
+
     const { id } = req.params;
+    const existingClient = await Client.findById(id);
 
-    const result = await Client.findByIdAndUpdate(id, req.body);
-
-    if (!result) {
+    if (!existingClient) {
       return res.status(404).json({ message: "User Not Found" });
     }
+
+    // Hash password if updated
+    if (req.body.password) {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      req.body.password = hashedPassword;
+    }
+
+    // Update profile picture only if a new URL is provided
+    if (req.body.profile_picture) {
+      existingClient.profile_picture = req.body.profile_picture;
+    }
+
+    // Update other details
+    existingClient.email = req.body.email;
+    existingClient.first_name = req.body.first_name;
+    existingClient.last_name = req.body.last_name;
+    existingClient.CompanyName = req.body.CompanyName;
+    existingClient.about = req.body.about;
+    existingClient.location = req.body.location;
+
+    // Save the updated client details
+    await existingClient.save();
 
     return res.status(200).send({ message: "User Updated successfully" });
   } catch (error) {
