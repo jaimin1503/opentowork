@@ -14,6 +14,14 @@ import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 
 export default function DevIT() {
+  const images = [brand, photoshop, design, presentation, house];
+  const texts = [
+    "Logo Design",
+    "Photoshop Editing",
+    "Web & Mobile Design",
+    "Presentation Design",
+    "Architecture & Interior Design",
+  ];
   return (
     <>
       <Navbar />
@@ -52,19 +60,7 @@ export default function DevIT() {
               Design and creative projects for your most pressing work.
             </h1>
           </div>
-          <ChangeImage
-            initial={brand}
-            text1="Logo Design"
-            text2="Photoshop Editing"
-            text3="Web & Mobile Design"
-            text4="Presentation Design"
-            text5="Architecture & Interior Design"
-            url1={brand}
-            url2={photoshop}
-            url3={design}
-            url4={presentation}
-            url5={house}
-          />
+          <ChangeImage initial={brand} texts={texts} images={images} />
         </div>
         <div className="button flex justify-center py-10">
           <Link to="/Welcome">

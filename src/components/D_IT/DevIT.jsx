@@ -25,6 +25,14 @@ import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 
 export default function DevIT() {
+  const texts = [
+    "Mobile app Development",
+    "Shopify Development",
+    "WordPress Development",
+    "Data Visualization",
+    "Machine Learning",
+  ];
+  const images = [app, shopify, workpress, data, ml];
   return (
     <>
       <Navbar />
@@ -59,19 +67,7 @@ export default function DevIT() {
               Development and IT projects for all yoour need.
             </h1>
           </div>
-          <ChangeImage
-            initial={app}
-            text1="Mobile app Development"
-            text2="Shopify Development"
-            text3="WordPress Development"
-            text4="Data Visualization"
-            text5="Machine Learning"
-            url1={app}
-            url2={shopify}
-            url3={workpress}
-            url4={data}
-            url5={ml}
-          />
+          <ChangeImage initial={app} images={images} texts={texts} />
         </div>
         <div className="row4">
           <div
