@@ -73,43 +73,31 @@
 	border-radius: 5px;
 }
 
-@media (max-width:1130px) {
+@media (max-width:800px) {
 	.navbar{
+		padding-left: 5rem;
 		height: 50px;
 		justify-content: center;
 		flex-direction: column;
 		width: 100vw;
 		align-items: flex-start;
+		padding-top: 3rem;
 	}
 
-	.left_side ul{
+	.left_side .ula{
 		flex-direction: column;
-		z-index: 50;
-		align-items: flex-start;
-		margin-left: 2rem;
+		max-width: fit-content;
+	}
 
-	}
-	.li{
-		padding: 5px 0;
-		font-size: 2em;
-		font-weight: bold;
-	}
 	.right_side{
-		justify-content: start;
 		flex-direction: column;
-		align-items: flex-start;
-		margin-left: 2rem;
+		justify-content: space-around;
+		max-width: fit-content;
+		margin-bottom: 5rem;
 	}
+
 	.log_in{
 		margin-bottom: 1.5rem;
-		font-size: 2rem;
-		font-weight: 900;
-	}
-	.log_in p{
-		padding: 0;
-	}
-	.sign_up button{
-		padding: 1rem 2rem;
 	}
 
 	.burger{
@@ -119,27 +107,6 @@
 		opacity: 0;
 	}
 	.h_nav_resp{
-		height: 50vh;
-	}
-}
-
-@media (max-width:800px){
-	.li{
-		font-size: large;
-	}
-	.log_in p{
-		font-size: large;
-	}
-	.sign_up{
-		padding: 0.5rem 1.5rem;
-	}
-	
-}
-
-@media(max-width:520px){
-	.home_row1{
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		height: 40vh;
 	}
 }
