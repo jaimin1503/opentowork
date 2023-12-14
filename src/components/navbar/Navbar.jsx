@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -11,6 +11,14 @@ export default function Navbar() {
   };
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [islogo, setIsLogo] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth <= 800) {
+      setIsLogo(true);
+    }
+  }, []);
+
   const handleClick = () => {
     setIsOpen(!isOpen);
     setVisible(!visible);
@@ -18,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       {!visible ? (
-        <Link to="/" className="">
+        <Link to="/" className={`${islogo ? "opacity-100" : "opacity-0"}`}>
           <img
             className=" absolute m-2 h-[35px] w-[35px]"
             src={logo}
