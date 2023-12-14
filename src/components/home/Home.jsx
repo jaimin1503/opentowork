@@ -116,7 +116,11 @@ export default function Home() {
         </div>
         <div className="class">
           <div className="row5">
-            <img src={worker} alt="worker" className="worker absolute" />
+            <img
+              src={worker}
+              alt="worker"
+              className="worker absolute w-full h-[80vh] object-cover sm:h-[75vh] rounded-lg"
+            />
             <div className="z-10">
               <div className=" p-5 sm:p-10 md:p-20">
                 <h1 className="mb-5 text-2xl sm:text-3xl md:text-4xl relative text-white">

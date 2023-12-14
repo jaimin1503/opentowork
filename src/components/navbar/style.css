@@ -13,6 +13,9 @@
 .logo{
 	width: 2rem;
 }
+.v_logo{
+	visibility: hidden;
+}
 .navbar{
 	display: flex;
 	justify-content: space-between;
@@ -81,6 +84,10 @@
 		flex-direction: column;
 		width: 100vw;
 		align-items: flex-start;
+	}
+
+	.v_logo{
+		visibility: visible;
 	}
 
 	.left_side .ula{

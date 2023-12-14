@@ -24,9 +24,8 @@ export default function DevIT() {
   ];
   return (
     <>
-      <Navbar />
-
       <div className="gradient_dev">
+        <Navbar />
         <div className="display_area flex justify-center items-center py-5">
           <Display
             heading1="Best Designers and Creators for your business."
@@ -35,28 +34,33 @@ export default function DevIT() {
           />
         </div>
         <div className=" py-10">
-          <div className="py-5 flex justify-center items-center pb-5">
+          <div className="py-5 flex flex-col justify-center items-center pb-5 md:flex md:flex-row ">
             <img
-              className="h-[40vh] w-[50vw] object-cover m-5 rounded-xl"
+              className="h-[40vh] w-[80vw] object-cover m-5 rounded-xl"
               src={photography}
               alt="img"
             />
-            <h1 className=" text-white text-5xl font-bold mx-10">
+            <h1 className=" text-white text-4xl pt-5 font-bold mx-10 ">
               Photography
             </h1>
           </div>
-          <div className="py-5 flex justify-center items-center pb-5">
-            <h1 className=" text-white text-5xl font-bold mx-10">
-              Video Editing
-            </h1>
-            <video autoPlay muted controls className="h-[40vh] w-[50vw]">
+          <div className="py-5 flex flex-col justify-center items-center pb-5 md:flex md:flex-row-reverse">
+            <video
+              autoPlay
+              muted
+              controls
+              className="h-[40vh] w-[80vw] md:w-[70vw]"
+            >
               <source src={video} type="video/mp4" />
             </video>
+            <h1 className=" text-white text-4xl pt-5 font-bold mx-10">
+              Video Editing
+            </h1>
           </div>
         </div>
         <div className="row3">
           <div className="text flex justify-center py-10">
-            <h1 className="text-white text-5xl font-extrabold my-5">
+            <h1 className="text-white text-3xl p-5 sm:text-4xl font-extrabold my-5">
               Design and creative projects for your most pressing work.
             </h1>
           </div>

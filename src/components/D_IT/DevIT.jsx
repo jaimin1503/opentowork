@@ -13,10 +13,6 @@ import data from "./assets/data.jpg";
 import shopify from "./assets/shopify.jpg";
 import ml from "./assets/ml.jpg";
 import workpress from "./assets/wordpress.jpg";
-import display1 from "./assets/display1.jpg";
-import display2 from "./assets/display2.jpg";
-import display3 from "./assets/display3.jpg";
-import display4 from "./assets/display4.jpg";
 import Display from "../display/Display";
 import Languages from "../languages/Languages";
 import ChangeImage from "../changeImage/ChangeImage";
@@ -35,9 +31,9 @@ export default function DevIT() {
   const images = [app, shopify, workpress, data, ml];
   return (
     <>
-      <Navbar />
       <div className="gradient_dev">
-        <div className="displayarea flex justify-center items-center py-5">
+        <Navbar />
+        <div className="displayarea flex justify-center items-center py-5 sm:flex sm:flex-col">
           <Display
             heading1="Developers and IT experts to scale your org."
             heading2="Hire the particular experts and get your work done within your timeline."
@@ -45,16 +41,14 @@ export default function DevIT() {
           />
         </div>
         <div className=" flex flex-col items-center justify-center py-5">
-          <h1 className=" text-white text-4xl mb-3 font-bold">
+          <h1 className=" text-white text-3xl sm:text-4xl m-5 font-bold">
             Find the best Developers and IT experts
           </h1>
-          <div className="flex">
+          <div className="flex flex-wrap justify-center">
             <Languages url={web} />
             <Languages url={react} />
             <Languages url={ruby} />
             <Languages url={nodejs} />
-          </div>
-          <div className="flex">
             <Languages url={mysql} />
             <Languages url={python} />
             <Languages url={cpp} />
@@ -63,7 +57,7 @@ export default function DevIT() {
         </div>
         <div className="row3">
           <div className=" flex justify-center py-5">
-            <h1 className=" text-4xl text-white m-5 font-bold">
+            <h1 className=" text-3xl sm:text-4xl text-white m-5 font-bold">
               Development and IT projects for all yoour need.
             </h1>
           </div>
@@ -79,30 +73,6 @@ export default function DevIT() {
                 Join Now
               </button>
             </Link>
-          </div>
-          <div className=" flex justify-center items-center">
-            <img
-              className="h-[30vh] w-[30vw] m-5 rounded-xl object-cover"
-              src={display1}
-              alt="img"
-            />
-            <img
-              className="h-[30vh] w-[30vw] m-5 rounded-xl object-cover"
-              src={display2}
-              alt="img"
-            />
-          </div>
-          <div className=" flex justify-center items-center">
-            <img
-              className="h-[30vh] w-[30vw] m-5 rounded-xl object-cover"
-              src={display3}
-              alt="img"
-            />
-            <img
-              className="h-[30vh] w-[30vw] m-5 rounded-xl object-cover"
-              src={display4}
-              alt="img"
-            />
           </div>
         </div>
       </div>

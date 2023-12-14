@@ -20,28 +20,28 @@ export default function ChangeImage(props) {
 
   return (
     <div className="flex justify-center">
-      <div className="h-[50vh] w-[90vw] rounded-xl my-5 bg-[#4a426a] flex justify-center items-center">
-        <ul className="flex flex-col w-[30%] mt-10 mb-5 ml-6 list-none">
+      <div className="h-[50vh] w-[90vw] rounded-lg md:h-[65vh] my-5 bg-[#4a426a] ">
+        <div className="h-[50%] w-full">
+          <img
+            className="h-[100%] w-[100%] object-cover rounded-t-xl"
+            src={images[currentImageIndex]}
+            alt="dfg"
+          />
+        </div>
+        <ul className=" items-center justify-center flex flex-col">
           {texts.map((text, index) => (
             <li
               key={index}
-              className="text-white py-2 cursor-pointer text-xl hover:text-purple-500"
+              className="text-white py-1 cursor-pointer text-xl hover:text-purple-500"
               onClick={() => handleImageChange(index)}
             >
               {text}
             </li>
           ))}
-          <button className="bg-purple-500 mx-20 mt-10 hover:bg-purple-600 py-2 px-5 text-white rounded-full">
+          <button className="bg-purple-500 mx-20 mt-2 hover:bg-purple-600 py-2 px-5 text-white rounded-full">
             Browse Projects
           </button>
         </ul>
-        <div className="w-[70%] h-[100%]">
-          <img
-            className="h-[100%] w-[100%] object-cover rounded-r-xl"
-            src={images[currentImageIndex]}
-            alt="dfg"
-          />
-        </div>
       </div>
     </div>
   );
