@@ -1,5 +1,5 @@
 import work_img from "./assets/—Pngtree—people characters work near a_7516385.png";
-import "./style.css";
+// import "./style.css";
 import ai from "./assets/ai.png";
 import it from "./assets/IT.png";
 import business from "./assets/business.png";
@@ -119,7 +119,7 @@ export default function Home() {
             <img
               src={worker}
               alt="worker"
-              className="worker absolute w-full h-[80vh] object-cover sm:h-[75vh] rounded-lg"
+              className="worker absolute w-full object-cover rounded-lg"
             />
             <div className="z-10">
               <div className=" p-5 sm:p-10 md:p-20">
