@@ -18,7 +18,7 @@ export default function FreeLancer() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/users/${id}`)
+        .get(`https://opnetowork.onrender.com/users/${id}`)
         .then((res) => {
           setUser(res.data.data);
           setLoading(false);

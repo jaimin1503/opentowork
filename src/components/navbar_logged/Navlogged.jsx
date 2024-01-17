@@ -19,7 +19,7 @@ export default function Navlogged(props) {
         navigate("/login");
       }
       axios
-        .post("http://localhost:5555", {}, { withCredentials: true })
+        .post("https://opnetowork.onrender.com", {}, { withCredentials: true })
         .then((res) => {
           setClient(res.data.client);
         })

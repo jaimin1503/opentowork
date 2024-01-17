@@ -13,7 +13,7 @@ export default function AllPosts() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/posts?page=${page}`)
+      .get(`https://opnetowork.onrender.com/posts?page=${page}`)
       .then((res) => {
         const newPosts = res.data.data;
         if (newPosts.length === 0) {

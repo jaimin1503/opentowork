@@ -59,7 +59,7 @@ function NewPost() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/clients/${id}`)
+        .get(`https://opnetowork.onrender.com/clients/${id}`)
         .then((res) => {
           setClient(res.data.data);
           setLoading(false);

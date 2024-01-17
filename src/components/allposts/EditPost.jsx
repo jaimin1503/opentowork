@@ -59,7 +59,7 @@ function EditPost() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`http://localhost:5555/posts/${id}`)
+        .get(`https://opnetowork.onrender.com/posts/${id}`)
         .then((res) => {
           const postData = res.data.data;
           setPost(postData);

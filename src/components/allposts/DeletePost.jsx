@@ -14,7 +14,7 @@ const DeletePost = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/posts/${id}`)
+      .delete(`https://opnetowork.onrender.com/posts/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Post Deleted successfully", { variant: "success" });

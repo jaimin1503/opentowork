@@ -126,7 +126,7 @@ export default function SignUp() {
     setLoading(true);
     axios
       .post(
-        "http://localhost:5555/users",
+        "https://opnetowork.onrender.com/users",
         {
           ...formData,
           location: locationValue,
