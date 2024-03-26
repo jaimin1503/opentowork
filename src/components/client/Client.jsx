@@ -56,10 +56,10 @@ export default function Client() {
                   />
                 </div>
                 <div className="profile_info">
-                  <h1 className=" text-3xl font-bold py-2 text-purple-100">
+                  <h1 className=" text-3xl font-bold py-2">
                     {client.first_name}
                   </h1>
-                  <h2 className=" text-xl py-2 text-purple-300">
+                  <h2 className=" text-xl py-2">
                     -{client.location}
                   </h2>
                 </div>
@@ -99,10 +99,10 @@ export default function Client() {
               </div>
             </div>
             <div className="profile_row2">
-              <h1 className="text-4xl font-bold p-10 text-purple-100">
+              <h1 className="text-4xl font-bold p-10">
                 {client.CompanyName}
               </h1>
-              <h2 className=" max-w-[70%] px-10 text-justify text-purple-200">
+              <h2 className=" max-w-[70%] px-10 text-justify">
                 {client.about}
               </h2>
             </div>

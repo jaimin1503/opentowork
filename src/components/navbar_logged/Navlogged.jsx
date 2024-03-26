@@ -19,9 +19,10 @@ export default function Navlogged(props) {
         navigate("/login");
       }
       axios
-        .post("https://opnetowork.onrender.com", {}, { withCredentials: true })
+        .post("http://localhost:5555", {}, { withCredentials: true })
         .then((res) => {
           setClient(res.data.client);
+          console.log(res.data);
         })
         .catch((error) => {
           console.log(error);
@@ -35,7 +36,7 @@ export default function Navlogged(props) {
     <div>
       <div className="  navbar flex justify-between">
         <div className="left_navbar w-[20%]">
-          <ul className=" list-none flex text-white justify-around py-2 items-center">
+          <ul className=" list-none flex   justify-around py-2 items-center">
             <li className=" cursor-pointer logo w-8 h-8">
               <img src={logo} alt="logo" />
             </li>
@@ -43,10 +44,10 @@ export default function Navlogged(props) {
               Services
               <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-purple-800 py-2 px-8 space-y-1">
                 {/* <Link to="/AllPosts">
-                  <li className=" text-sm py-1 text-white">Browse Jobs</li>
+                  <li className=" text-sm py-1  ">Browse Jobs</li>
                 </Link> */}
                 <Link to={props.myjobs}>
-                  <li className=" text-sm py-1 text-white">My Jobs</li>
+                  <li className=" text-sm py-1  ">My Jobs</li>
                 </Link>
               </ul>
             </li>
@@ -58,16 +59,16 @@ export default function Navlogged(props) {
             <li className=" flex items-center">
               {" "}
               <input
-                className="  relative rounded-full border-2 border-purple-900 text-white p-1 pl-5 pr-8 "
+                className="  relative rounded-full border-2 border-purple-900   p-1 pl-5 pr-8 "
                 placeholder="Search"
                 type="text"
               />
             </li>
             <li className=" cursor-pointer">
-              <NotificationsIcon className=" text-white" />
+              <NotificationsIcon className="  " />
             </li>
             <li className=" cursor-pointer">
-              <FaHeart className=" text-white" />
+              <FaHeart className="  " />
             </li>
             <li className=" cursor-pointer">
               <img

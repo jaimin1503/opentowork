@@ -39,7 +39,7 @@ export default function Navlogged(props) {
     <div>
       <div className="  navbar flex justify-between">
         <div className="left_navbar w-[20%]">
-          <ul className=" list-none flex text-white justify-around py-2 items-center">
+          <ul className=" list-none flex justify-around py-2 items-center">
             <li className=" cursor-pointer logo w-8 h-8">
               <img src={logo} alt="logo" />
             </li>
@@ -47,7 +47,7 @@ export default function Navlogged(props) {
               Services
               <ul className="absolute hidden rounded-lg w-36 group-hover:block bg-purple-800 py-2 px-8 space-y-1">
                 <Link to="/AllPosts">
-                  <li className=" text-sm py-1 text-white">Browse Jobs</li>
+                  <li className=" text-sm py-1">Browse Jobs</li>
                 </Link>
                 {/* <Link to={props.myjobs}>
                   <li className=" text-sm py-1 text-white">My Jobs</li>
@@ -60,10 +60,10 @@ export default function Navlogged(props) {
         <div className="right_navbar w-1/5">
           <ul className="flex justify-around list-none  items-center py-2 ">
             <li className=" cursor-pointer">
-              <NotificationsIcon className=" text-white" />
+              <NotificationsIcon className=" " />
             </li>
             <li className=" cursor-pointer">
-              <FaHeart className=" text-white" />
+              <FaHeart className=" " />
             </li>
             <li className="group cursor-pointer">
               {cookies.token ? (
@@ -80,7 +80,7 @@ export default function Navlogged(props) {
                 />
               )}
               <ul className="absolute hidden rounded-lg right-0 group-hover:block bg-purple-800 mr-10 py-2 px-8 space-y-1">
-                <li onClick={Logout} className=" text-sm py-1 text-white">
+                <li onClick={Logout} className=" text-sm py-1 ">
                   Logout
                 </li>
               </ul>

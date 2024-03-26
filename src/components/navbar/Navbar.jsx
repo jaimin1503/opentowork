@@ -45,13 +45,13 @@ export default function Navbar() {
             </Link>
             <Link
               to="/DevIT"
-              className=" li text-purple-200 hover:text-purple-500"
+              className=" li text-purple-600 hover:text-purple-500"
             >
               Development & IT
             </Link>
             <Link
               to="/Design"
-              className=" li text-purple-200 hover:text-purple-500"
+              className=" li text-purple-600 hover:text-purple-500"
             >
               Design & Creation
             </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
           } flex items-center mr-5`}
         >
           <div className="log_in text-xl">
-            <li className=" text-purple-200 group cursor-pointer list-none px-5 hover:text-purple-500">
+            <li className=" text-purple-600 group cursor-pointer list-none px-5 hover:text-purple-500">
               log in
               <ul className=" absolute hidden rounded-lg group-hover:block bg-purple-800 py-2 px-8 space-y-1">
                 <Link to="/Login">

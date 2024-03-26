@@ -54,10 +54,10 @@ export default function FreeLancer() {
                   />
                 </div>
                 <div className="profile_info">
-                  <h1 className=" text-3xl font-bold py-2 text-purple-100">
+                  <h1 className=" text-3xl font-bold py-2 ">
                     {user.username}
                   </h1>
-                  <h2 className=" text-xl text-purple-300 py-2 flex items-center">
+                  <h2 className=" text-xl py-2 flex items-center">
                     <FaMapMarker size={14} color="red" className="mx-2" />
                     {user.location}
                   </h2>
@@ -98,13 +98,13 @@ export default function FreeLancer() {
               </div>
             </div>
             <div className="profile_row2">
-              <h1 className="text-3xl px-10 py-5 text-purple-100">
+              <h1 className="text-3xl px-10 py-5 ">
                 Computer Engineering Student
               </h1>
-              <h2 className=" max-w-[70%] px-10 text-justify text-purple-300">
+              <h2 className=" max-w-[70%] px-10 text-justify">
                 {user.description}
               </h2>
-              <h2 className="px-10 py-3 font-bold text-purple-100">
+              <h2 className="px-10 py-3 font-bold ">
                 {" "}
                 &#8377;{user.hourly_rate}/hr
               </h2>

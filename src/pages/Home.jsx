@@ -33,17 +33,17 @@ export default function Home() {
               <span className=" symbol material-symbols-outlined ">
                 select_check_box
               </span>
-              <h2 className=" text-white">No cost to join</h2>
+              <h2 className=" ">No cost to join</h2>
             </div>
             <div className="row2info flex items-center mb-5">
               <span className=" symbol material-symbols-outlined ">
                 push_pin
               </span>
-              <h2 className=" text-white">Post a job and hire top talent</h2>
+              <h2 className=" ">Post a job and hire top talent</h2>
             </div>
             <div className="row2info flex items-center mb-5">
               <span className=" symbol material-symbols-outlined ">stars</span>
-              <h2 className=" text-white">
+              <h2 className=" ">
                 Work with the best—without breaking the bank
               </h2>
             </div>
@@ -53,11 +53,11 @@ export default function Home() {
           <h1 className={`gradient_text ${styles.h1} ml-20`}>
             Brows by caragories:
           </h1>
-          <div className="cata-row1 text-white my-10">
+          <div className="cata-row1  my-10">
             <div className="cata_boxes flex flex-col items-center sm:flex-row justify-center">
               <Link to="/DevIt">
                 <div
-                  className="the-box m-5 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-2 border-purple-600 p-5 rounded-xl flex flex-col items-center hover:scale-105"
+                  className="the-box m-5 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-2 border-purple-300 p-5 rounded-xl flex flex-col items-center hover:scale-105"
                   style={{ transition: "0.3s" }}
                 >
                   <img
@@ -71,7 +71,7 @@ export default function Home() {
               </Link>
 
               <div
-                className="the-box m-5 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-2 border-purple-600 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
+                className="the-box m-5 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-2 border-purple-300 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
                 style={{ transition: "0.3s" }}
               >
                 <img
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="cata_boxes2 flex flex-col items-center sm:flex-row justify-center">
               <Link to="/Design">
                 <div
-                  className="the-box m-5 border-2 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-purple-600 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
+                  className="the-box m-5 border-2 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-purple-300 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
                   style={{ transition: "0.3s" }}
                 >
                   <img
@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
               </Link>
               <div
-                className="the-box m-5 border-2 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-purple-600 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
+                className="the-box m-5 border-2 h-[280px] w-[280px] sm:h-[300px] sm:w-[300px] border-purple-300 p-4 rounded-xl flex flex-col items-center hover:scale-105 "
                 style={{ transition: "0.3s" }}
               >
                 <img
@@ -133,7 +133,7 @@ export default function Home() {
               <div className="p-5 sm:px-10 md:px-20">
                 <div className="find bg-purple-600 hover:bg-purple-700 hover:text-purple-100 h-[70px] w-[140px] rounded-lg md:h-[100px] md:w-[200px] my-3 relative">
                   <Link to="/Welcome">
-                    <h3 className=" text-white text-sm md:text-lg p-3">
+                    <h3 className="  text-sm md:text-lg p-3">
                       Your Project, Our Expertise.
                       <p>&rarr;</p>
                     </h3>
@@ -141,7 +141,7 @@ export default function Home() {
                 </div>
                 <div className="find bg-purple-600 hover:bg-purple-700 hover:text-purple-100 h-[70px] w-[140px] rounded-lg md:h-[100px] md:w-[200px] my-3 relative">
                   <Link to="/Welcome">
-                    <h3 className=" text-white text-sm md:text-lg p-3">
+                    <h3 className="  text-sm md:text-lg p-3">
                       Quality Freelancers, Quality Work.
                       <p>&rarr;</p>
                     </h3>
