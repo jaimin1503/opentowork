@@ -15,7 +15,7 @@ export default function ClientPost() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://opnetowork.onrender.com/clients/${id}/posts`)
+      .get(`http://localhost:5555/clients/${id}/posts`)
       .then((res) => {
         setPosts(res.data.data);
         setLoading(false);

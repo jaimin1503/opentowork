@@ -17,7 +17,7 @@ export default function Client() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`https://opnetowork.onrender.com/clients/${id}`)
+        .get(`http://localhost:5555/clients/${id}`)
         .then((res) => {
           setClient(res.data.data);
           setLoading(false);

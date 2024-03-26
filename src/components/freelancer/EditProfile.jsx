@@ -86,7 +86,7 @@ export default function EditProfile() {
     if (id) {
       // Proceed with the request
       axios
-        .get(`https://opnetowork.onrender.com/users/${id}`, { withCredentials: true })
+        .get(`http://localhost:5555/users/${id}`, { withCredentials: true })
         .then((res) => {
           const userData = res.data.data;
           setUser(userData);

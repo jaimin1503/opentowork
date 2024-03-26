@@ -40,7 +40,7 @@ export default function EditClientProfile() {
     setLoading(true);
     if (id) {
       axios
-        .get(`https://opnetowork.onrender.com/clients/${id}`, { withCredentials: true })
+        .get(`http://localhost:5555/clients/${id}`, { withCredentials: true })
         .then((res) => {
           const clientData = res.data.data;
           setClient(clientData);
