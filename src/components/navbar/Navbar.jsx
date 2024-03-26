@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "./586273b931349e0568ad89df.png";
+import logo from "../../assets/586273b931349e0568ad89df.png";
 
 export default function Navbar() {
   const navigat = useNavigate();

@@ -119,7 +119,7 @@ export default function EditClientProfile() {
   };
 
   return (
-    <div className="gradient_home">
+    <div className=" ">
       <Navlogged />
       <div className=" h-full w-full flex justify-center items-center py-10">
         {loading ? <Spinner /> : ""}

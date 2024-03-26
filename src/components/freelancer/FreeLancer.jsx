@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../index.css";
 import { useParams } from "react-router-dom";
-import default_pic from "./assets/default_profile_picture.jpg";
+import default_pic from "../../assets/default_profile_picture.jpg";
 import Spinner from "../Spinner";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ export default function FreeLancer() {
   }, [id]);
 
   return (
-    <div className="gradient_home w-screen h-screen">
+    <div className="  w-screen h-screen">
       <NavUser />
       {loading ? (
         <Spinner />

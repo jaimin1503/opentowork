@@ -1,8 +1,8 @@
-import logo from "./assets/586273b931349e0568ad89df.png";
+import logo from "../../assets/586273b931349e0568ad89df.png";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
-import profile from "./assets/profile.svg";
+import profile from "../../assets/profile.svg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -33,7 +33,7 @@ export default function Navlogged(props) {
   }, [cookies, navigate, removeCookie]);
   return (
     <div>
-      <div className="gradient_home navbar flex justify-between">
+      <div className="  navbar flex justify-between">
         <div className="left_navbar w-[20%]">
           <ul className=" list-none flex text-white justify-around py-2 items-center">
             <li className=" cursor-pointer logo w-8 h-8">
@@ -58,7 +58,7 @@ export default function Navlogged(props) {
             <li className=" flex items-center">
               {" "}
               <input
-                className="gradient_home relative rounded-full border-2 border-purple-900 text-white p-1 pl-5 pr-8 "
+                className="  relative rounded-full border-2 border-purple-900 text-white p-1 pl-5 pr-8 "
                 placeholder="Search"
                 type="text"
               />

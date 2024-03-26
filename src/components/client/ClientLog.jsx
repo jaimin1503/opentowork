@@ -39,7 +39,7 @@ export default function ClientLog() {
   };
 
   return (
-    <div className="gradient_home">
+    <div className=" ">
       <h1 className="text-4xl text-white font-extralight p-4" style={mystyle}>
         OpenToWork
       </h1>

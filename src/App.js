@@ -1,8 +1,8 @@
-import DevIT from "./components/D_IT/DevIT";
-import Home from "./components/home/Home";
-import Welcome from "./components/welcome/Welcome";
+import DevIT from "./pages/DevIT";
+import Welcome from "./pages/Welcome";
 import { Routes, Route } from "react-router-dom";
-import Design from "./components/design/Design";
+import Home from "./pages/Home";
+import Design from "./pages/Design";
 import {
   Client,
   ClientLog,

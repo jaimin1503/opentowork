@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./client.css";
 import { useParams } from "react-router-dom";
 import Navlogged from "../navbar_logged/Navlogged";
-import default_pic from "./assets/default_profile_picture.jpg";
+import default_pic from "../../assets/default_profile_picture.jpg";
 import Spinner from "../Spinner";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ export default function Client() {
   const newpostpath = `/Client/${client._id}/NewPost`;
 
   return (
-    <div className="gradient_home w-screen h-screen">
+    <div className="  w-screen h-screen">
       <Navlogged myjobs={`/Client/${client._id}/posts`} />
       {loading ? (
         <Spinner />
